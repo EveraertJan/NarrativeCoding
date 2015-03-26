@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cinder>
+<block
+	name="Oculus"
+	id="org.libcinder.oculus"
+	author="Cinder Project"
+	summary="oculus"
+	>
+	<sourcePattern>src/*.cpp</sourcePattern>
+	<headerPattern>src/*.h</headerPattern>
+	<header>src/oculus/oculusVR.h</header>
+	<includePath system="true">src</includePath>
+</block>
+</cinder>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cinder>
+<block
+	name="ciUI"
+	id="com.syedrezaali.ciUI"
+	author="Syed Reza Ali"
+	license="MIT"
+	summary="GL based GUI"
+	url="http://www.syedrezaali.com/blog/?p=2366"
+	git="git://github.com/rezaali/ciUI"
+	>
+	<supports os="macosx" />
+	<supports os="msw" />
+	<supports os="ios" />
+	<includePath>src</includePath>
+	<header>src/ciUI.h</header>
+	<copyExclude>samples</copyExclude>
+</block>
+</cinder>

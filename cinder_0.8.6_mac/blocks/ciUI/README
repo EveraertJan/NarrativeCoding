@@ -1,0 +1,138 @@
+ciUI is a Block for Cinder (version 0.8.4) that easily allows for the creation of user interfaces aka GUIs. ciUI also takes care of varible binding, widget layout, spacing, font loading, saving and loading settings, and callbacks. ciUI can be easily customized (UI themes, colors, font & widget sizes, padding, layout, etc).
+
+Read more about how it came to be here: http://www.syedrezaali.com/blog/?p=2366
+
+Check out images here: http://www.flickr.com/photos/44532783@N04/sets/72157630538746416/
+
+Check out different UI Themes here: http://www.flickr.com/photos/44532783@N04/sets/72157630539131926/
+
+ciUI contains a collection of minimally designed graphical user interface (GUI) widgets:
+
+Widgets in ciUI:
+
+- Buttons & Toggles (multi-image & single image buttons, label buttons, toggle matrix, radio toggles, Drop Down List)
+- Sliders (multi-image, minimal, bilabel, FPS, circle, rotary, range, vertical, horizontal)
+- Number Dials
+- 2D pads
+- Labels, FPS labels
+- Text Input Area
+- Waveform & Spectrum Graphs
+- Moving Plot/Graph
+- Image Display, Image Color Sampler
+
+This library allows for rapid UI design and development, which is important when designing/sketching with code. Widget layout is semi-automatic, and can be easily customized. ciUI is a GL based GUI and uses Cinder's drawings calls to render its widgets. It integrates into Cinder projects very easily since it follow’s Cinder’s Block ideology. There are many examples included in the download that show how to add widgets, customize their placement, get values from different types of widgets, automagically bind class variable to sliders, buttons, etc, set widget values, add callback functions for gui events, saving and loading settings, and more.
+
+This UI library was inspired & influenced by: 
+
+- controlP5 (http://www.sojamo.de/libraries/controlP5/) 
+- GLV (http://mat.ucsb.edu/glv/)
+- SimpleGUI (http://marcinignac.com/blog/simplegui/)
+- Apple's User Interface 
+
+ciUI was / is developed by Reza Ali (www.syedrezaali.com || syed.reza.ali@gmail.com || @rezaali). It has been tested on OSX  and iOS. It should work on windows, but hasn't been tested yet. ciUI is open source under an MIT License, therefore you can use it in commercial and non-commercial projects. If you do end up using it, please let me know. I would love to see examples of it out there in the wild. If you plan to use it in a commercial project please consider donating to help support this Block and future releases/fixes/features (http://www.syedrezaali.com/blog/?p=2366).
+
+In terms of performance, I haven't compared it to other GUIs out there, but since its written using Cinder drawing calls and uses Boost for its callbacks, it runs fast (on my laptop (Apple Macbook Pro 2009)).
+
+TUTORIAL: 
+
+This tutorial will provide step by step instructions on how to integrate ciUI with a project your are working on, for simplicity I will assume we are starting from an empty project. For this we are going to be assuming you are using Cinder 0.8.4 for OSX, however these instructions should be easily adaptable for iOS.
+
+1. After downloading ciUI, place it in your Cinder Blocks folder. 
+
+2. Create a new project using Cinder's TinderBox.app (found in the tools folder inside the Cinder directory). For simplicity I named my project ciUITutorial, I'll refer to this in the tutorial below. 
+
+3. Open the xCode project. 
+
+4. Drag the src (ciUI/src) folder within ciUI into the Source folder in the xCode project. When prompted "Choose options for adding these files", make sure that you leave "Copy items into destination group's folder (if needed) unchecked", then press "Finish." 
+
+5. You can rename the resulting "src" folder to ciUI to make things neat and organized. 
+
+6. Now we must import a font resource that ciUI will use. Select the Resources folder in xCode and right click. Select the option starts with "Add files to 'ciUITutorial' When the file dialog opens, navigate to where ciUI lives within your Blocks folder. Navigate to samples/ciUISimpleExample/xcode and select the "NewMedia Fett.ttf" font file. Make sure that you check "Copy items into destination group's folder (if needed)", then press "Finish." This will copy the font file to your project. 
+
+7. Now go back to xCode and include "ciUI.h" in your "ciUITutorialApp.cpp" file inside the source folder. 
+
+8. Then in your ciUITutorialApp.cpp file, create a new ciUICanvas object by typing "ciUICanvas *gui;" within the ciUITutorialApp class. In this example we are going to create a slider and a toggle. The slider will control the background color, and the toggle will toggle fullscreen mode. Add a float variable called "bgValue" in the ciUITutorialApp class declaration. In addition, add these two functions in the ciUITutorialApp class declaration: 
+
+void shutdown(); 
+void guiEvent(ciUIEvent *event);    
+
+9. Now write the function definitions below in "ciUITutorialApp.cpp" file: 
+
+void ciUITutorialApp::shutdown()
+{
+
+}
+
+void ciUITutorialApp::guiEvent(ciUIEvent *event)
+{
+
+}
+
+10. Within the setup function we are going to initialize the gui object and bgValue and add widgets to it:
+
+bgValue = 0.75; 
+gui = new ciUICanvas(0,0,320,320);		//ciUICanvas(float x, float y, float width, float height)		
+
+Note: The arguments define the GUI's top left corner position and width and height. If no arguments are passed then the GUI will position itself on top of the window and the back of the GUI won't be drawn. 
+
+11. In the shutdown function we have to delete the gui after we are done using the application. 
+
+void ciUITutorialApp::shutdown()
+{
+    delete gui; 
+}
+
+12. We are now going to add widgets (a label, slider and toggle) to the GUI, in the setup function after creating a new ciUICanvas: 
+
+gui->addWidgetDown(new ciUILabel("CIUI TUTORIAL", CI_UI_FONT_LARGE));    
+gui->addWidgetDown(new ciUISlider(304, 16, 0.0, 1.0, bgValue, "BACKGROUND"));
+gui->addWidgetDown(new ciUIToggle(16, 16, false, "FULLSCREEN"));    
+
+The next couple line will tightly fit the canvas to the widgets, and register events with the ciUITutorialApp class, and set the UI color theme.
+
+gui->autoSizeToFitWidgets();           
+gui->registerUIEvents(this, &ciUITutorialApp::guiEvent);
+gui->setTheme(CI_UI_THEME_MINBLACK);
+
+Note: The second to last line adds a listener/callback, so the gui knows what function to call once a widget is triggered or interacted with by the user, don't worry if its doesn't make too much sense right now, you'll get the hang of it. 
+
+13. Then add these lines to the update and draw functions within the ciUITutorialApp class: 
+
+void ciUITutorialApp::update()
+{
+    gui->update();
+}
+
+void ciUITutorialApp::draw()
+{
+    gl::clear( Color( bgValue, bgValue, bgValue ) ); 
+    gui->draw();
+}
+
+14. Now to the guiEvent function, we need to react to the user input. The argument of the guiEvent function, ciUIEvent *event, contains the widget which was modified. To access the widget we do the following:
+
+void ciUITutorialApp::guiEvent(ciUIEvent *event)
+{
+    string name = event->widget->getName(); 
+    cout << "GOT EVENT FROM: " << name << endl; 
+    if(name == "BACKGROUND")
+    {
+        ciUISlider *s = (ciUISlider *) event->widget; 
+        bgValue = s->getScaledValue();
+    }
+    else if(name == "FULLSCREEN")
+    {
+        ciUIToggle *t = (ciUIToggle * ) event->widget; 
+        setFullScreen(t->getValue()); 
+    }  
+}
+
+Note: The if statement checks to see which widget was triggered. The way it does that is a string comparison. If the widget is the "BACKGROUND" slider widget, then we cast the widget to a slider and retrieve its value by the "getScaledValue()" function. 
+
+Note: An easier way is to bind the value when creating the slider, that way the bgValue gets automagically updated with the slider changes without having to write the code above, here is some code showing how to do that (very easy, just pass the address of the variable instead):
+
+gui->addWidgetDown(new ciUISlider(304, 16, 0.0, 1.0, &bgValue, "BACKGROUND"));
+
+Notes: So you can see adding other kinds of widgets and reacting to them are done in a very similar manner. Explore the examples to check out how to access some of the more complex widgets, I hope you'll see thats its pretty intuitive. I tried my best to limit the amount of code that needs to be written, however I kept it open enough so people can be expressive with it. 
+
+If you lost your way somewhere in the tutorial, don't worry the whole project is included in the examples in the ciUI Block folder!

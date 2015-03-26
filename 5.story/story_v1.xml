@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+M1ke is een dkuisrobot en doet al heel zijn leven niets anders dan het kuisen van een reusachtige fabriek. op een dag komt hij door een misterieus luik beneden aan de mure van de fabriek terecht. na een eindje wandelen door velden en opengestrekte vlaktes, kan hij nog net het greon van een reusachtig woud zien. tussen hem en het groen ligt een reusachtige rivier, die alleen over te steken valt door dehangbrug even verder te gebruiken. [] na het oversteken van deze rivier kan M1ke zijn tocht verder zetten. hij loopt het woud in en stoot op een reusachtige robot, die vasthangt aan een ketting en bomen aan het omhakken is. na een legendarisch gevegd met de eigenaar van de robot, die duidelijk afziet onder de omstandigheden, slaagt hij erin de robot te bevrijden en samen vertrekken ze dan op reis. 
+<story>
+	<chapter>
+		<block>
+			<image></image>
+			<p>Het roffelende geluid van QU's rupsbanden vulde de gang van de reusachtige fabriek. met een zoemend geluid kwam hij tot stilstand en keek eens goed rond, op zoek naar mensen zonder peciaal pak of helm. Hij moest ervoor zorgen dat alle arbeiders de voorschriften naleefden, en niemand kwam waar hij niet moest zijn. Dat was best een belangrijke taak, want het zorgde ervoor dat niemand gewond geraakte.</p>
+			<p>QU was best trots op zijn werk. Sinds hij was toegekomen, waren er geen zware ongelukken meer gebeurd in de fabriek. Hij had ervoor gezorgd dat alle machines veilig waren, en dat iedereen op de hoogte was van de veiligheid. Hij rolde op zijn kleine rupsbandjes door de grote fabriekshallen, tussen dreunende machines en hete ovens, goed uitkijkend naar gevaar. Daarna ging hij terug naar zijn laadstationetje, om op te landen voor zijn volgende ronde, en verslag uit te brengen. </p>
+
+		</block>
+	</chapter>
+	<chapter>
+		<block>
+			<image></image>
+			<p></p>
+		</block>
+		<interaction>
+			<id>01</id>
+			<expl>zorg dat M1ke niet op de rotte plekken stapt, door de blokken in de juiste volgorde neer te leggen.</expl>
+		</interaction>
+		<block>
+			<p>nudat johannes veilig aan de overkant geraakt was, kon hij zijn reis verderzetten. Hij haalde nog eens diep adem, en ging weer op pad, best tevreden over zijn prestatie.</p>
+		</block>
+	</chapter>
+	<chapter>
+		<block>
+			<p>Voor hem stond een reusachtige draak. grote groene schubben bedekte zijn immense lichaam, en met kleine gele ogen keek hij johannes kwaad aan.  Met bevende handen nam hij zijn bijl vast. om deze draak te verslaan ging hij alles wat hij onderweg geleerd had moeten gebruiken.</p>
+	</chapter>
+</story>
