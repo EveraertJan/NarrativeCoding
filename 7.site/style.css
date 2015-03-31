@@ -45,6 +45,9 @@ body{
 #btns a:last-child{
 	padding-right: 20px;
 }
+#btns a:visited{
+	color: #F04736;
+}
 #btns a:hover{
 	background-color: #F04736;
 	color: #FFF;		
@@ -188,6 +191,9 @@ body{
 	text-decoration: none;
 	font-size: 10pt;
 	padding: 5px;
+}
+.cta:visited{
+	color: #F04736;
 }
 .cta:hover{
 	background-color: #F04736;

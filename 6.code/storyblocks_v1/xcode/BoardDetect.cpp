@@ -10,6 +10,7 @@
 void Detect::setup(ci::Area r){
     scanArea = r;
     b = *new Board();
+    b.rotation.push_back(0);
 }
 void Detect::draw(){
     if(b.isFound){
@@ -35,7 +36,7 @@ void Detect::scanOld(ci::Surface s){
     points.push_back(oldC);
     points.push_back(oldC);
     points.push_back(oldC);
-    for(int i = 0; i<360; i+=5){
+    for(int i = b.rotation[b.rotation.size()]; i<360+b.rotation[b.rotation.size()]; i+=5){
         float dist= oldC.distance(b.points[0])*1.2;
         if(dist<50){
             dist = 50;
@@ -48,7 +49,7 @@ void Detect::scanOld(ci::Surface s){
             if(pos.x>0 && pos.y>0 && pos.x<s.getWidth() && pos.y<s.getHeight()){
                 cinder::ColorT<unsigned char> c = s.getPixel(pos);
                 if(c.r+c.g+c.b < detectThreshold){
-                    int quart = floorf((i/90));
+                    int quart = floorf(((i-b.rotation[b.rotation.size()])/90));
                     if(oldC.distance(pos)>oldC.distance(points[quart])){
                         points[quart] = pos;
                     }

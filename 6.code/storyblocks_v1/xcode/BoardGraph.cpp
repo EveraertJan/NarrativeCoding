@@ -21,7 +21,7 @@ void Board::draw(){
         ci::gl::drawStrokedCircle(points[i], i+2);
     }
     avgP.push_back(points[0]);
-    if(avgP.size()>3){
+    if(avgP.size()>10){
         avgP.erase (avgP.begin());
     }
     ci::Vec2f avgPoint = ci::Vec2f(0, 0);

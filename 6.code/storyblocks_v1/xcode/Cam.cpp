@@ -13,7 +13,7 @@ void Cam::setup(){
     vector<Capture::DeviceRef> devices( Capture::getDevices() );
     for( vector<Capture::DeviceRef>::const_iterator deviceIt = devices.begin(); deviceIt != devices.end(); ++deviceIt ) {
         Capture::DeviceRef device = *deviceIt;
-        console() << "Found Device " << device->getName() << " ID: " << device->getNative() << std::endl;
+        console() << "Found Device " << device->getName() << std::endl;
         try {
             if( device->checkAvailable() ) {
                 mCaptures.push_back( Capture::create( ci::app::getWindowWidth(), ci::app::getWindowHeight(), device ) );
@@ -33,6 +33,7 @@ void Cam::setup(){
 void Cam::update(){
     for( vector<CaptureRef>::iterator cIt = mCaptures.begin(); cIt != mCaptures.end(); ++cIt ) {
         if( (*cIt)->checkNewFrame() ) {
+            ci::app::console() << (*cIt)->getSurface().getSize() << "\n";
             Surface8u surf = (*cIt)->getSurface();
             mTextures[cIt - mCaptures.begin()] = gl::Texture::create( surf );
         }
