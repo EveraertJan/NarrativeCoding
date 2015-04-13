@@ -1,23 +1,26 @@
 //
-//  Detect.cpp
-//  CinderProject
+//  detectTag.cpp
+//  compiler_v1
 //
-//  Created by jan everaert on 21/03/15.
+//  Created by jan everaert on 13/04/15.
 //
 //
 
-#include "BoardDetect.h"
-void Detect::setup(ci::Area r){
+#include "DetectTag.h"
+
+
+
+void DetectTag::setup(ci::Area r){
     scanArea = r;
     b = *new Board();
     b.rotation.push_back(0);
 }
-void Detect::draw(){
+void DetectTag::draw(){
     if(b.isFound){
         b.draw();
     }
 }
-void Detect::scan(cinder::Surface s){
+void DetectTag::scan(cinder::Surface s){
     if(b.isFound){
         scanOld(s);
     } else {
@@ -29,7 +32,7 @@ void Detect::scan(cinder::Surface s){
         }
     }
 }
-void Detect::scanOld(ci::Surface s){
+void DetectTag::scanOld(ci::Surface s){
     ci::Vec2f oldC = ci::Vec2f(b.center.x, b.center.y);
     std::vector<ci::Vec2f>points;
     for(int i = 0; i<3; i++){
@@ -80,7 +83,7 @@ void Detect::scanOld(ci::Surface s){
     }
     
 }
-Boolean Detect::scanDetect(cinder::Surface s){
+Boolean DetectTag::scanDetect(cinder::Surface s){
     cinder::ColorT<unsigned char> ch = s.areaAverage(scanArea);
     if(ch.r+ch.g+ch.b<detectThreshold*3){
         return true;
@@ -88,7 +91,7 @@ Boolean Detect::scanDetect(cinder::Surface s){
         return false;
     }
 }
-int Detect::readTag(ci::Surface s){
+int DetectTag::readTag(ci::Surface s){
     std::vector<ci::Vec2f> v= b.points;
     int steps = 4;
     int bit = 1;
@@ -114,7 +117,7 @@ int Detect::readTag(ci::Surface s){
     ci::app::console() << total << "\n";
     return total;
 }
-void Detect::scanNew(ci::Surface s){
+void DetectTag::scanNew(ci::Surface s){
     float w = s.getWidth();
     float h = s.getHeight();
     ci::Vec2f center = ci::Vec2f(w/2, h/2);

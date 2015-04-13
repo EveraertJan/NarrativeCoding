@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>792C2F32-2DCC-4DC5-A39C-D44CCD5DB487</string>
+	<key>IDESourceControlProjectName</key>
+	<string>compiler_v1</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>89DE2AECA07AF0370EA2DB97ED6F0457F011C37D</key>
+		<string>https://github.com/EveraertJan/storyblocks.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>6.code/compiler_v1/xcode/compiler_v1.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>89DE2AECA07AF0370EA2DB97ED6F0457F011C37D</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/EveraertJan/storyblocks.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>89DE2AECA07AF0370EA2DB97ED6F0457F011C37D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>89DE2AECA07AF0370EA2DB97ED6F0457F011C37D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>storyblocks</string>
+		</dict>
+	</array>
+</dict>
+</plist>
