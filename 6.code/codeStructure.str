@@ -1,0 +1,34 @@
+
+
+compiler
+|- main
+	|- setup()			- prepare cam, detection area of users and overal space
+	|- settings()		- udpate settings (layout, projection area webcam detection area)
+|- user
+	|- setup() 			- depends of number of users defined
+	|- checkBoard()		- detect if board is present
+	|- checkCode() 		- compile code of user
+	|- checkInput() 	-check for interaction in whatever way is set
+|- detectCode
+	|- read (surface)	- read corresponding code from surface, return id
+	|- setup () 		- set area to scan for new code
+	|- update (x, y)	- replace the default x and y of scan 
+|- compiler
+	|- setup()			- make instance
+	|- compile() 		- read array of id's into controllable code
+	|- setResult(idArr) - save right array for checking out of xml
+	|- readCode()/o 	- transform string of code in id's 
+|- cam
+	|- setup()
+	|- update()
+	|- draw()
+
+
+dependencies
+|- main
+	|- cam
+	|- users[]
+		|- detectCode
+		|- detectBoard
+
+|- -|---| compiler

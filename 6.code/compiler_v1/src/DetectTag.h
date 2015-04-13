@@ -12,6 +12,9 @@
 #include "cinder/app/AppBasic.h"
 #include "Board.h"
 
+#include "Compiler.h"
+
+
 class DetectTag{
     
 public:
@@ -26,5 +29,7 @@ public:
     
     Board b;
     float detectThreshold = 150;
+    
+    Compiler comp;
     
 };

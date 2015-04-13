@@ -55,7 +55,5 @@ void Cam::draw()
         gl::color( Color::white() );
         if( mTextures[cIt-mCaptures.begin()] )
             gl::draw( mTextures[cIt-mCaptures.begin()], Rectf( 0, 0, width, height ) );
-        
-        
     }
 }

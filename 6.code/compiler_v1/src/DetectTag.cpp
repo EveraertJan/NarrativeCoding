@@ -32,6 +32,8 @@ void DetectTag::scan(cinder::Surface s){
         }
     }
 }
+
+
 void DetectTag::scanOld(ci::Surface s){
     ci::Vec2f oldC = ci::Vec2f(b.center.x, b.center.y);
     std::vector<ci::Vec2f>points;

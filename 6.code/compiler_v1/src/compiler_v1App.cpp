@@ -1,7 +1,7 @@
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
 #include "Cam.h"
-#include "DetectTag.h"
+#include "User.h"
 
 
 using namespace ci;
@@ -16,17 +16,17 @@ class compiler_v1App : public AppNative {
 	void draw();
     
     Cam webcam;
-    DetectTag dt;
+    vector<User> users;
+    ci::Vec2i midpoint;
+    Area scanArea;
+    int numUsers;
 };
 
-void compiler_v1App::setup()
-{
+void compiler_v1App::setup(){
     webcam.setup();
-    dt.setup(Area(10, 10, 110, 110));
 }
 
-void compiler_v1App::mouseDown( MouseEvent event )
-{
+void compiler_v1App::mouseDown( MouseEvent event ){
 }
 
 void compiler_v1App::update()
@@ -40,9 +40,22 @@ void compiler_v1App::draw()
 	// clear out the window with black
 	gl::clear( Color( 0, 0, 0 ) );
     webcam.draw();
-    Surface s  = copyWindowSurface();
-    //dt.scan(s);
-    dtq.draw();
+    ci::Surface pres = copyWindowSurface(scanArea);
+    int degChange = abs(360/numUsers);
+    for(int i = 0; i<numUsers; i++){
+        int deg = degChange*i;
+        cinder::gl::pushMatrices();
+        ci::gl::rotate(deg);
+        ci:gl::Texture t;
+        t.create(pres);
+        ci::gl::draw(t);
+        ci::gl::popMatrices();
+        //fill in
+        Area ar = Area(0, 0, 10, 10);
+        Surface s  = copyWindowSurface(ar);
+        users[i].checkBoard();
+    }
+    
 }
 
 CINDER_APP_NATIVE( compiler_v1App, RendererGl )

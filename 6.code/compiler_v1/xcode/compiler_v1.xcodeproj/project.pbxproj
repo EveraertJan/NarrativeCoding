@@ -16,6 +16,9 @@
 		480CFE611ADB9A24005C8254 /* DetectTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 480CFE5F1ADB9A24005C8254 /* DetectTag.cpp */; };
 		480CFE641ADB9B4D005C8254 /* Board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 480CFE621ADB9B4D005C8254 /* Board.cpp */; };
 		480CFE671ADB9CDE005C8254 /* Cam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 480CFE651ADB9CDE005C8254 /* Cam.cpp */; };
+		485A5BCD1ADC15BC003F9C75 /* Compiler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 485A5BCB1ADC15BC003F9C75 /* Compiler.cpp */; };
+		485A5BD01ADC16D8003F9C75 /* DetectCode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 485A5BCE1ADC16D8003F9C75 /* DetectCode.cpp */; };
+		485A5BD31ADC192D003F9C75 /* User.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 485A5BD11ADC192D003F9C75 /* User.cpp */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -38,6 +41,12 @@
 		480CFE631ADB9B4D005C8254 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Board.h; path = ../src/Board.h; sourceTree = "<group>"; };
 		480CFE651ADB9CDE005C8254 /* Cam.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cam.cpp; sourceTree = "<group>"; };
 		480CFE661ADB9CDE005C8254 /* Cam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cam.h; sourceTree = "<group>"; };
+		485A5BCB1ADC15BC003F9C75 /* Compiler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Compiler.cpp; sourceTree = "<group>"; };
+		485A5BCC1ADC15BC003F9C75 /* Compiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compiler.h; sourceTree = "<group>"; };
+		485A5BCE1ADC16D8003F9C75 /* DetectCode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DetectCode.cpp; path = ../src/DetectCode.cpp; sourceTree = "<group>"; };
+		485A5BCF1ADC16D8003F9C75 /* DetectCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetectCode.h; path = ../src/DetectCode.h; sourceTree = "<group>"; };
+		485A5BD11ADC192D003F9C75 /* User.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = User.cpp; path = ../src/User.cpp; sourceTree = "<group>"; };
+		485A5BD21ADC192D003F9C75 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../src/User.h; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		78EA32DED09F4C74A31EE4ED /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
@@ -83,6 +92,11 @@
 				480CFE651ADB9CDE005C8254 /* Cam.cpp */,
 				480CFE5F1ADB9A24005C8254 /* DetectTag.cpp */,
 				480CFE621ADB9B4D005C8254 /* Board.cpp */,
+				485A5BCB1ADC15BC003F9C75 /* Compiler.cpp */,
+				485A5BCE1ADC16D8003F9C75 /* DetectCode.cpp */,
+				485A5BCF1ADC16D8003F9C75 /* DetectCode.h */,
+				485A5BD11ADC192D003F9C75 /* User.cpp */,
+				485A5BD21ADC192D003F9C75 /* User.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -138,6 +152,7 @@
 				78EA32DED09F4C74A31EE4ED /* Resources.h */,
 				02A8925DB8A647E6BEB43608 /* compiler_v1_Prefix.pch */,
 				480CFE601ADB9A24005C8254 /* DetectTag.h */,
+				485A5BCC1ADC15BC003F9C75 /* Compiler.h */,
 				480CFE661ADB9CDE005C8254 /* Cam.h */,
 				480CFE631ADB9B4D005C8254 /* Board.h */,
 			);
@@ -254,7 +269,10 @@
 				480CFE641ADB9B4D005C8254 /* Board.cpp in Sources */,
 				480CFE671ADB9CDE005C8254 /* Cam.cpp in Sources */,
 				02536D0E988C4750A7E3E4DC /* compiler_v1App.cpp in Sources */,
+				485A5BCD1ADC15BC003F9C75 /* Compiler.cpp in Sources */,
+				485A5BD31ADC192D003F9C75 /* User.cpp in Sources */,
 				480CFE611ADB9A24005C8254 /* DetectTag.cpp in Sources */,
+				485A5BD01ADC16D8003F9C75 /* DetectCode.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
