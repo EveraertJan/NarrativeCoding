@@ -1,6 +1,8 @@
 
 
 compiler
+|
+|
 |- main
 	|- setup()			- prepare cam, detection area of users and overal space
 	|- settings()		- udpate settings (layout, projection area webcam detection area)
@@ -25,6 +27,8 @@ compiler
 
 
 dependencies
+|
+|
 |- main
 	|- cam
 	|- users[]

@@ -47,8 +47,8 @@ void compiler_v1App::draw()
         cinder::gl::pushMatrices();
         ci::gl::rotate(deg);
         ci:gl::Texture t;
-        t.create(pres);
-        ci::gl::draw(t);
+        //t.create(pres);
+        //ci::gl::draw(t);
         ci::gl::popMatrices();
         //fill in
         Area ar = Area(0, 0, 10, 10);

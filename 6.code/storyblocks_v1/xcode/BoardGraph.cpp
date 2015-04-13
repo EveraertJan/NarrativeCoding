@@ -37,7 +37,7 @@ void Board::draw(){
         avgR+=rotation[i];
     }
     if(curRot<avgR/rotation.size()){
-        curRot+=abs((avgR/rotation.size())-curRot)/2;
+        curRot+=std::abs((avgR/rotation.size())-curRot)/2;
     } else if(curRot>avgR/rotation.size()){
         curRot-=abs((avgR/rotation.size())-curRot)/2;
     }

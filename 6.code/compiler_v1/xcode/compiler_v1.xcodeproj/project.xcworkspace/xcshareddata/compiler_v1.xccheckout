@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>792C2F32-2DCC-4DC5-A39C-D44CCD5DB487</string>
 	<key>IDESourceControlProjectName</key>
-	<string>compiler_v1</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>89DE2AECA07AF0370EA2DB97ED6F0457F011C37D</key>
 		<string>https://github.com/EveraertJan/storyblocks.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>6.code/compiler_v1/xcode/compiler_v1.xcodeproj</string>
+	<string>6.code/compiler_v1/xcode/compiler_v1.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>89DE2AECA07AF0370EA2DB97ED6F0457F011C37D</key>
