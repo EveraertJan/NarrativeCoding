@@ -14,5 +14,9 @@ public:
     void setup();
     void compile();
     void setResult();
-    void readCode();
+    
+    
+    std::vector<int> idArr;
+    
+    
 };

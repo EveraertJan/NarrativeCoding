@@ -13,6 +13,3 @@ void Compiler::setup(){
     
 }
 
-void Compiler::readCode(){
-    
-}

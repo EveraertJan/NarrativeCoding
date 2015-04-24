@@ -8,6 +8,8 @@
 
 #pragma once
 #include "cinder/app/appBasic.h"
+#include "DetectTag.h"
+#include "Compiler.h"
 
 class User{
 public:
@@ -17,4 +19,12 @@ public:
     void checkBoard();
     void checkCode();
     void checkInput();
+    
+    
+    ci::Surface curSurf;
+    
+    DetectTag reader;
+    
+    Compiler compiler;
+    
 };

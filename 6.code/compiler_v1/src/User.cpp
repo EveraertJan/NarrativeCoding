@@ -11,14 +11,18 @@
 void User::setup(int x, int y, int rot){
     
 }
-void User::update(ci::Surface s){
+void User::update(ci::Surface sur){
+    curSurf = sur;
     
 }
 void User::draw(){
     
 }
 void User::checkBoard(){
+    //go check for other pieces of code
     
+    int code = reader.readTag(curSurf);
+    compiler.idArr.push_back(code);
 }
 void User::checkCode(){
     

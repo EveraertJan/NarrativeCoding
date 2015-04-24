@@ -19,14 +19,18 @@ class compiler_v1App : public AppNative {
     vector<User> users;
     ci::Vec2i midpoint;
     Area scanArea;
-    int numUsers;
+    int numUsers=2;
+    
+    Boolean track = false;;
 };
 
 void compiler_v1App::setup(){
     webcam.setup();
+    
 }
 
 void compiler_v1App::mouseDown( MouseEvent event ){
+    track = true;
 }
 
 void compiler_v1App::update()
@@ -40,20 +44,18 @@ void compiler_v1App::draw()
 	// clear out the window with black
 	gl::clear( Color( 0, 0, 0 ) );
     webcam.draw();
+    if(track){
     ci::Surface pres = copyWindowSurface(scanArea);
     int degChange = abs(360/numUsers);
     for(int i = 0; i<numUsers; i++){
         int deg = degChange*i;
         cinder::gl::pushMatrices();
         ci::gl::rotate(deg);
-        ci:gl::Texture t;
-        //t.create(pres);
-        //ci::gl::draw(t);
         ci::gl::popMatrices();
-        //fill in
         Area ar = Area(0, 0, 10, 10);
         Surface s  = copyWindowSurface(ar);
-        users[i].checkBoard();
+        users[i].update(s);
+    }
     }
     
 }
