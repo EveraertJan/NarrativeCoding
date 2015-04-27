@@ -21,6 +21,7 @@ public:
     int validMove(ci::Vec2i move);
     void addBlock(ci::Vec2i pos);
     void addHole(ci::Vec2i pos);
+    void drawScenery();
     
     void buildLevel();
     

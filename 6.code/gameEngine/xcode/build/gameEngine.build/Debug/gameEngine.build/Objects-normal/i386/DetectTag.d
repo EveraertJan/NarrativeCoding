@@ -1,6 +1,7 @@
 dependencies: \
-  /Users/janeveraert/GitHub/storyblocks/6.code/gameEngine/src/gameEngineApp.cpp \
-  ../../../../../Documents/ehb/internship_files/_cinder_0.8.6_mac/include/cinder/app/AppNative.h \
+  /Users/janeveraert/GitHub/storyblocks/6.code/gameEngine/xcode/DetectTag.cpp \
+  /Users/janeveraert/GitHub/storyblocks/6.code/gameEngine/xcode/DetectTag.h \
+  /Users/janeveraert/GitHub/storyblocks/6.code/gameEngine/xcode/Board.h \
   /Users/janeveraert/GitHub/storyblocks/6.code/gameEngine/src/Compiler.h \
   ../../../../../Documents/ehb/internship_files/_cinder_0.8.6_mac/include/cinder/Utilities.h \
   ../../../../../Documents/ehb/internship_files/_cinder_0.8.6_mac/boost/boost/lexical_cast.hpp \
@@ -135,8 +136,4 @@ dependencies: \
   /Users/janeveraert/GitHub/storyblocks/6.code/gameEngine/src/Character.h \
   /Users/janeveraert/GitHub/storyblocks/6.code/gameEngine/src/Conversions.h \
   /Users/janeveraert/GitHub/storyblocks/6.code/gameEngine/include/Resources.h \
-  ../../../../../Documents/ehb/internship_files/_cinder_0.8.6_mac/include/cinder/CinderResources.h \
-  /Users/janeveraert/GitHub/storyblocks/6.code/gameEngine/src/TagDetect.h \
-  /Users/janeveraert/GitHub/storyblocks/6.code/gameEngine/xcode/Cam.h \
-  ../../../../../Documents/ehb/internship_files/_cinder_0.8.6_mac/include/cinder/Capture.h \
-  ../../../../../Documents/ehb/internship_files/_cinder_0.8.6_mac/include/cinder/gl/Texture.h
+  ../../../../../Documents/ehb/internship_files/_cinder_0.8.6_mac/include/cinder/CinderResources.h

@@ -8,6 +8,7 @@
 
 #include "Cam.h"
 
+
 void Cam::setup(){
     // list out the devices
     vector<Capture::DeviceRef> devices( Capture::getDevices() );
@@ -15,7 +16,7 @@ void Cam::setup(){
         Capture::DeviceRef device = *deviceIt;
         console() << "Found Device " << device->getName() << std::endl;
         try {
-            if( device->checkAvailable()  && device->getName() == "Venus USB2.0 Camera #2") {
+            if( device->checkAvailable() ) {
                 mCaptures.push_back( Capture::create( ci::app::getWindowWidth(), ci::app::getWindowHeight(), device ) );
                 mCaptures.back()->start();
                 mTextures.push_back( gl::TextureRef() );
@@ -33,7 +34,6 @@ void Cam::setup(){
 void Cam::update(){
     for( vector<CaptureRef>::iterator cIt = mCaptures.begin(); cIt != mCaptures.end(); ++cIt ) {
         if( (*cIt)->checkNewFrame() ) {
-            ci::app::console() << (*cIt)->getSurface().getSize() << "\n";
             Surface8u surf = (*cIt)->getSurface();
             mTextures[cIt - mCaptures.begin()] = gl::Texture::create( surf );
         }
@@ -56,4 +56,22 @@ void Cam::draw()
         if( mTextures[cIt-mCaptures.begin()] )
             gl::draw( mTextures[cIt-mCaptures.begin()], Rectf( 0, 0, width, height ) );
     }
+}
+ci::Surface Cam::getSurf(){
+    gl::enableAlphaBlending();
+    gl::clear( Color::black() );
+    float width = getWindowWidth() ;/// mCaptures.size();
+    float height = width / ( WIDTH / (float)HEIGHT );
+    for( vector<CaptureRef>::iterator cIt = mCaptures.begin(); cIt != mCaptures.end(); ++cIt ) {
+        // draw the latest frame
+        gl::color( Color::white() );
+        try{
+            if( mTextures[cIt-mCaptures.begin()] ){
+                gl::draw( mTextures[cIt-mCaptures.begin()], Rectf( 0, 0, width, height ) );
+            }
+        } catch ( ... ){
+            ci::app::console() << "issue detected";
+        }
+    }
+    return copyWindowSurface();
 }

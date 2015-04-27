@@ -15,11 +15,8 @@ void Compiler::setup(){
     conv.setup(10);
     fillConversion();
     
-    
     buildLevel();
-    
-    //addBlock(ci::Vec2i(0, 2));
-    //addHole(ci::Vec2i(0, 2));
+
     
     curPas = 0;
     running = true;
@@ -40,24 +37,55 @@ void Compiler::draw(Boolean play){
     } else {
         ch.draw();
     }
+    drawScenery();
 }
 void Compiler::compile(){
+    std::vector<int> toEx;
+    
     for(int i = 0; i<input.size(); i++){
-        ci::Vec2i move = conv.getMovement(input.at(i));
-        int valid = validMove(move);
-        switch (valid){
-            case 0:
-                passes.push_back(curPosition+move);
-                curPosition+=move;
-                break;
-            case 1:
-                passes.push_back(curPosition);
-                break;
-            case -1:
-                passes.push_back(ci::Vec2i(0, 0));
-                died = true;
-                ci::app::console() << "died \n";
-                break;
+        if(input.at(i)>10){
+            //ci::app::console() << "doing this " << input.at(i)-10 << " times \n";
+            for(int k = 0; k<input.at(i)-10; k++){
+                Boolean tracking = true;
+                for(int j = i+1; j< input.size()-1; j++){
+                    if(input.at(j) == 0){
+                        tracking = false;
+                    } else if(tracking){
+                        toEx.push_back(input.at(j));
+                    }
+                }
+            }
+            //code in forloop mag niet meer uitgevoerd worden
+        } else if(input.at(i)<10 && input.at(i)!=0){
+            toEx.push_back(input.at(i));
+        }
+    }
+    //ci::app::console() << "size: " << toEx.size() << "\n";
+    
+    for(int i = 0; i<toEx.size(); i++){
+        //ci::app::console() << toEx.at(i) << "\n";
+        if(toEx.at(i) > 10){
+            //if/else
+            
+        } else if(toEx.at(i) == 0){
+            
+        } else {
+            ci::Vec2i move = conv.getMovement(toEx.at(i));
+            int valid = validMove(move);
+            switch (valid){
+                case 0:
+                    passes.push_back(curPosition+move);
+                    curPosition+=move;
+                    break;
+                case 1:
+                    passes.push_back(curPosition);
+                    break;
+                case -1:
+                    passes.push_back(ci::Vec2i(0, 0));
+                    died = true;
+                    ci::app::console() << "died \n";
+                    break;
+            }
         }
     }
     
@@ -65,15 +93,20 @@ void Compiler::compile(){
 
 int Compiler::validMove(ci::Vec2i move){
     int toReturn = 0;
+    ci::Vec2i nextPos = curPosition+move;
+    if(nextPos.x<0){ return 1; }
+    if(nextPos.x>10){ return 1; }
+    if(nextPos.y<0){ return 1; }
+    if(nextPos.y>10){ return 1; }
     for(int i = 0; i<blocks.size(); i++){
-        if(curPosition+move == blocks.at(i)){
+        if(nextPos == blocks.at(i)){
             toReturn+= 1;
         } else  {
             toReturn +=0;
         }
     }
     for(int i = 0; i<holes.size(); i++){
-        if(curPosition+move == holes.at(i)){
+        if(nextPos == holes.at(i)){
             toReturn-= 1;
         } else  {
             toReturn +=0;
@@ -107,9 +140,20 @@ void Compiler::addHole(ci::Vec2i pos){
     holes.push_back(pos);
 }
 void Compiler::fillConversion(){
-    conv.setMovement(0, ci::Vec2i(0, 0));
-    conv.setMovement(1, ci::Vec2i(0, -1));
-    conv.setMovement(2, ci::Vec2i(0, 1));
-    conv.setMovement(3, ci::Vec2i(1, 0));
+    conv.setMovement(1, ci::Vec2i(0, 0));
+    conv.setMovement(2, ci::Vec2i(0, -1));
+    conv.setMovement(3, ci::Vec2i(0, 1));
     conv.setMovement(4, ci::Vec2i(-1, 0));
+    conv.setMovement(5, ci::Vec2i(1, 0));
+}
+
+void Compiler::drawScenery(){
+    ci::gl::color(0, 0, 0);
+    for(int i = 0; i<holes.size(); i++){
+        ci::gl::drawSolidRect(ci::Rectf(holes.at(i).x*50, holes.at(i).y*50, holes.at(i).x*50+50, holes.at(i).y*50+50));
+    }
+    ci::gl::color(200, 0, 0);
+    for(int i = 0; i<blocks.size(); i++){
+        ci::gl::drawSolidRect(ci::Rectf(blocks.at(i).x*50, blocks.at(i).y*50, blocks.at(i).x*50+50, blocks.at(i).y*50+50));
+    }
 }

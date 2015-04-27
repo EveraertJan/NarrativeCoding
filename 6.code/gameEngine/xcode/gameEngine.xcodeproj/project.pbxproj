@@ -12,6 +12,8 @@
 		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
 		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
+		4877EA4D1AEB92A100A51AF1 /* TagDetect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4877EA4B1AEB92A100A51AF1 /* TagDetect.cpp */; };
+		4877EA501AEB92F900A51AF1 /* Cam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4877EA4E1AEB92F900A51AF1 /* Cam.cpp */; };
 		489CEE8B1AEAC94900FA4948 /* Compiler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 489CEE891AEAC94900FA4948 /* Compiler.cpp */; };
 		489CEE8E1AEAC97200FA4948 /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 489CEE8C1AEAC97100FA4948 /* Character.cpp */; };
 		489CEE911AEAD0DB00FA4948 /* Conversions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 489CEE8F1AEAD0DB00FA4948 /* Conversions.cpp */; };
@@ -35,6 +37,10 @@
 		11855895D1E548D78BCF1636 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		4877EA4B1AEB92A100A51AF1 /* TagDetect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TagDetect.cpp; path = ../src/TagDetect.cpp; sourceTree = "<group>"; };
+		4877EA4C1AEB92A100A51AF1 /* TagDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagDetect.h; path = ../src/TagDetect.h; sourceTree = "<group>"; };
+		4877EA4E1AEB92F900A51AF1 /* Cam.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cam.cpp; sourceTree = "<group>"; };
+		4877EA4F1AEB92F900A51AF1 /* Cam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cam.h; sourceTree = "<group>"; };
 		489CEE891AEAC94900FA4948 /* Compiler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Compiler.cpp; path = ../src/Compiler.cpp; sourceTree = "<group>"; };
 		489CEE8A1AEAC94900FA4948 /* Compiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Compiler.h; path = ../src/Compiler.h; sourceTree = "<group>"; };
 		489CEE8C1AEAC97100FA4948 /* Character.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Character.cpp; path = ../src/Character.cpp; sourceTree = "<group>"; };
@@ -79,12 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				0A0653A68ABA4F9F86E8CE50 /* gameEngineApp.cpp */,
-				489CEE891AEAC94900FA4948 /* Compiler.cpp */,
-				489CEE8A1AEAC94900FA4948 /* Compiler.h */,
-				489CEE8C1AEAC97100FA4948 /* Character.cpp */,
-				489CEE8D1AEAC97200FA4948 /* Character.h */,
-				489CEE8F1AEAD0DB00FA4948 /* Conversions.cpp */,
-				489CEE901AEAD0DB00FA4948 /* Conversions.h */,
+				4877EA511AEB968900A51AF1 /* Compiler */,
+				4877EA521AEB969200A51AF1 /* Detection */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -139,6 +141,8 @@
 			children = (
 				11855895D1E548D78BCF1636 /* Resources.h */,
 				72D58FA6EF864FA2B4EC5B67 /* gameEngine_Prefix.pch */,
+				4877EA541AEB96B600A51AF1 /* Detection */,
+				4877EA531AEB96AC00A51AF1 /* Compiler */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -160,6 +164,44 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4877EA511AEB968900A51AF1 /* Compiler */ = {
+			isa = PBXGroup;
+			children = (
+				489CEE891AEAC94900FA4948 /* Compiler.cpp */,
+				489CEE8C1AEAC97100FA4948 /* Character.cpp */,
+				489CEE8F1AEAD0DB00FA4948 /* Conversions.cpp */,
+			);
+			name = Compiler;
+			sourceTree = "<group>";
+		};
+		4877EA521AEB969200A51AF1 /* Detection */ = {
+			isa = PBXGroup;
+			children = (
+				4877EA4E1AEB92F900A51AF1 /* Cam.cpp */,
+				4877EA4B1AEB92A100A51AF1 /* TagDetect.cpp */,
+			);
+			name = Detection;
+			sourceTree = "<group>";
+		};
+		4877EA531AEB96AC00A51AF1 /* Compiler */ = {
+			isa = PBXGroup;
+			children = (
+				489CEE8A1AEAC94900FA4948 /* Compiler.h */,
+				489CEE8D1AEAC97200FA4948 /* Character.h */,
+				489CEE901AEAD0DB00FA4948 /* Conversions.h */,
+			);
+			name = Compiler;
+			sourceTree = "<group>";
+		};
+		4877EA541AEB96B600A51AF1 /* Detection */ = {
+			isa = PBXGroup;
+			children = (
+				4877EA4F1AEB92F900A51AF1 /* Cam.h */,
+				4877EA4C1AEB92A100A51AF1 /* TagDetect.h */,
+			);
+			name = Detection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4877EA4D1AEB92A100A51AF1 /* TagDetect.cpp in Sources */,
 				489CEE8E1AEAC97200FA4948 /* Character.cpp in Sources */,
 				489CEE911AEAD0DB00FA4948 /* Conversions.cpp in Sources */,
+				4877EA501AEB92F900A51AF1 /* Cam.cpp in Sources */,
 				489CEE8B1AEAC94900FA4948 /* Compiler.cpp in Sources */,
 				D6264D1706504367BC835254 /* gameEngineApp.cpp in Sources */,
 			);

@@ -27,12 +27,13 @@ void Character::updatePos(ci::Vec2i pos){
     }
     y = pos.y;
     x = pos.x;
-    ci::app::console() << x << "\n";
+    //ci::app::console() << x << "\n";
 }
 
 void Character::draw(){
     ci::gl::pushMatrices();
     ci::gl::translate(x*50, y*50);
+    ci::gl::color(50, 50, 0);
     ci::gl::drawSolidRect(ci::Rectf(0, 0, 50, 50));
     ci::gl::popMatrices();
 }
