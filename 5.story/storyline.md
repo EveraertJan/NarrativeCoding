@@ -27,3 +27,19 @@ he finds shelter in the small village (night has yet fallen) and when he wakes u
 some miles into the forest, he comes across a wild robot, a runaway experiment from some years ago. he achieves in reprogramming it into a decent state [code moment two] he continues his path, now with two robots, off into the wild. 
 
 end of story
+
+
+##images neccesairy##
+- city startstate
+- maincharacter and robot (small)
+- maincharacter working on robots
+- running off of Qu
+- robot in the grass, laying
+- standing in front of door
+- bridge [gameset]
+- inside old house
+- snowy village
+- front of woods
+- big robot 
+- robot reprogramming [gameset]
+- endgraphic
