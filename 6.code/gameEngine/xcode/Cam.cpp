@@ -16,7 +16,7 @@ void Cam::setup(){
         Capture::DeviceRef device = *deviceIt;
         console() << "Found Device " << device->getName() << std::endl;
         try {
-            if( device->checkAvailable() ) {
+            if( device->checkAvailable() && mCaptures.size()<1) {
                 mCaptures.push_back( Capture::create( ci::app::getWindowWidth(), ci::app::getWindowHeight(), device ) );
                 mCaptures.back()->start();
                 mTextures.push_back( gl::TextureRef() );

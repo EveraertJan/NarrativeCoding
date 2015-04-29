@@ -10,9 +10,9 @@
 
 
 void Compiler::setup(){
-    ch.setup(0, 0);
-    curPosition = ci::Vec2i(0, 0);
-    conv.setup(10);
+    ch.setup(5, 5);
+    curPosition = ci::Vec2i(5, 5);
+    conv.setup(3000);
     fillConversion();
     
     buildLevel();
@@ -26,7 +26,7 @@ void Compiler::draw(Boolean play){
     if(play){
         if(curPas<passes.size()){
             ch.updatePos(passes.at(curPas));
-            //ci::app::console() << "passing on: " << passes.at(curPas) << "\n";
+            ci::app::console() << "passing on: " << passes.at(curPas) << "\n";
             curPas++;
             ch.draw();
         } else {
@@ -40,12 +40,13 @@ void Compiler::draw(Boolean play){
     drawScenery();
 }
 void Compiler::compile(){
+    
     std::vector<int> toEx;
     
     for(int i = 0; i<input.size(); i++){
-        if(input.at(i)>10){
+        //if(input.at(i)>10){
             //ci::app::console() << "doing this " << input.at(i)-10 << " times \n";
-            for(int k = 0; k<input.at(i)-10; k++){
+           /* for(int k = 0; k<input.at(i)-10; k++){
                 Boolean tracking = true;
                 for(int j = i+1; j< input.size()-1; j++){
                     if(input.at(j) == 0){
@@ -56,39 +57,41 @@ void Compiler::compile(){
                 }
             }
             //code in forloop mag niet meer uitgevoerd worden
-        } else if(input.at(i)<10 && input.at(i)!=0){
+        } else if(input.at(i)<10 && input.at(i)!=0){*/
             toEx.push_back(input.at(i));
-        }
+        //}
     }
-    //ci::app::console() << "size: " << toEx.size() << "\n";
+    ci::app::console() << "size: " << toEx.size() << "\n";
     
     for(int i = 0; i<toEx.size(); i++){
         //ci::app::console() << toEx.at(i) << "\n";
-        if(toEx.at(i) > 10){
+        //if(toEx.at(i) > 10){
             //if/else
             
-        } else if(toEx.at(i) == 0){
+        //} else if(toEx.at(i) == 0){
             
-        } else {
+        //} else {
             ci::Vec2i move = conv.getMovement(toEx.at(i));
             int valid = validMove(move);
             switch (valid){
                 case 0:
                     passes.push_back(curPosition+move);
                     curPosition+=move;
+                    ci::app::console() << "moved \n";
                     break;
                 case 1:
                     passes.push_back(curPosition);
+                    ci::app::console() << "didn't move \n";
                     break;
                 case -1:
                     passes.push_back(ci::Vec2i(0, 0));
                     died = true;
                     ci::app::console() << "died \n";
                     break;
-            }
+           // }
         }
     }
-    
+    running = true;
 }
 
 int Compiler::validMove(ci::Vec2i move){
@@ -142,7 +145,8 @@ void Compiler::addHole(ci::Vec2i pos){
 void Compiler::fillConversion(){
     conv.setMovement(1, ci::Vec2i(0, 0));
     conv.setMovement(2, ci::Vec2i(0, -1));
-    conv.setMovement(3, ci::Vec2i(0, 1));
+    conv.setMovement(2144, ci::Vec2i(0, 1));
+    conv.setMovement(1552, ci::Vec2i(1, 0));
     conv.setMovement(4, ci::Vec2i(-1, 0));
     conv.setMovement(5, ci::Vec2i(1, 0));
 }

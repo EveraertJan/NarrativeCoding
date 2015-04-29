@@ -16,18 +16,18 @@ void TagDetect::update(){
     
 }
 void TagDetect::draw(){
+    tracked.clear();
     ci::Surface surf  = webcam.getSurf();
-    Area area( 100, 100, 250, 250 );
+    Area area( 350, 100, 470, 220 );
     getCode(area, surf.clone(area), 1);
-    Area area2( 300, 100, 450, 250 );
-    getCode(area, surf.clone(area2), 2);
-    gl::drawStrokedRect(Rectf(100, 100, 250, 250));
-    gl::drawStrokedRect(Rectf(300, 100, 450, 250 ));
+    gl::drawStrokedRect(Rectf(350, 100, 470, 220 ));
     
 }
 
 void TagDetect::getCode(Area scanArea, ci::Surface surf, int offset){
-    scanArea = Area(0, 0, 150, 150) ;
+    int oX = scanArea.getX1();
+    int oY = scanArea.getY1();
+    scanArea = Area(0, 0, scanArea.getX2()-scanArea.getX1(), scanArea.getY2()-scanArea.getY1()) ;
     //ci::gl::draw(ci::gl::Texture(surf));
     int bX = surf.getWidth()/2;
     int bY = surf.getHeight()/2;
@@ -50,9 +50,13 @@ void TagDetect::getCode(Area scanArea, ci::Surface surf, int offset){
                     //if((c.r+c.g+c.b)/3<){
                     if(c.r<avg.r && c.b<avg.b && c.g<avg.g){
                         if(x>0 && y>0 && x<surf.getWidth() && y<surf.getHeight()){
-                        ci::gl::drawSolidCircle(ci::Vec2i(x, y), 3);
+                        ci::gl::drawSolidCircle(ci::Vec2i(x+oX, y+oY), 3);
                         isset.at(rad) = true;
-                        points.at(rad) = ci::Vec2i(x, y);
+                            
+                            
+                            int nx = int(bX+(((i/5)*4.5)*sin(ci::toRadians(float(st)))));
+                            int ny = int(bY+(((i/5)*4.5)*cos(ci::toRadians(float(st)))));
+                        points.at(rad) = ci::Vec2i(nx, ny);
                         }
                     }
                 }
@@ -73,7 +77,7 @@ void TagDetect::getCode(Area scanArea, ci::Surface surf, int offset){
                 float yoe = (((points[0].y-points[1].y)/steps)*i);
                 float y = (points[2].y+yos) + (((points[1].y+yoe)-(points[2].y+yos))/steps)*j;
                 cinder::ColorT<unsigned char> c = surf.getPixel(ci::Vec2i((int)x, (int)y));
-                ci::gl::drawSolidCircle(ci::Vec2i(x, y), 3);
+                ci::gl::drawSolidCircle(ci::Vec2i(x+oX, y+oY), 3);
                 if(c.r<avg.r && c.b<avg.b && c.g<avg.g){
                     total+=bit;
                 }
@@ -82,7 +86,8 @@ void TagDetect::getCode(Area scanArea, ci::Surface surf, int offset){
                 
             }
         }
-        ci::app::console() << total << "\n";
-        
+    tracked.push_back(total);
+    ci::app::console() << total << "\n";
+    
     
 }

@@ -21,4 +21,6 @@ public:
     Cam webcam;
     void getCode(Area scanArea, ci::Surface s, int offset);
     float intAvg;
+    
+    std::vector<int>tracked;
 };
