@@ -23,6 +23,7 @@ public:
     Boolean isFound;
     ci::gl::Texture cover;
     
-    
+    ci::Vec2i dispPosTop;
+    ci::Vec2i dispPosDown;
     
 };

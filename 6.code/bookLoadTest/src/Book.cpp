@@ -25,9 +25,17 @@ void Book::update(){
     
 }
 void Book::draw(){
-    if(isFound){
+    if(isFound && codeMoment){
+        
+        float dX = dispPosDown.x-dispPosTop.x;
+        float dY = dispPosDown.y-dispPosTop.y;
+        
+        float angleD = (atan2f(dY, dX)*180/pi)-90;
+        ci::app::console() << angleD << "\n";
+        
         ci::gl::pushMatrices();
-        ci::gl::translate(ci::app::getWindowWidth()/2-190, ci::app::getWindowHeight()/2-290);
+        ci::gl::translate(dispPosTop.x-360+10, dispPosTop.y-10);
+        ci::gl::rotate(angleD);
         ci::gl::draw(cover);
         ci::gl::popMatrices();
     }
