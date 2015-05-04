@@ -15,12 +15,14 @@ public:
     void setup(int c);
     void draw();
     void update();
-    
+    Boolean exists(int c);
     int code;
     Boolean scanned;
     Boolean codeMoment;
     
     Boolean isFound;
     ci::gl::Texture cover;
+    
+    
     
 };

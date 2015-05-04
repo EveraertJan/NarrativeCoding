@@ -53,7 +53,14 @@ void Cam::draw()
     for( vector<CaptureRef>::iterator cIt = mCaptures.begin(); cIt != mCaptures.end(); ++cIt ) {
         // draw the latest frame
         gl::color( Color::white() );
-        if( mTextures[cIt-mCaptures.begin()] )
+        if( mTextures[cIt-mCaptures.begin()] ){
+            //mTextures[cIt-mCaptures.begin()]->setFlipped(true);
+            gl::pushMatrices();
+            gl::scale(-1, -1);
+            gl::translate(-1024, -768);
             gl::draw( mTextures[cIt-mCaptures.begin()], Rectf( 0, 0, width, height ) );
+            gl::popMatrices();
+        }
     }
+    
 }

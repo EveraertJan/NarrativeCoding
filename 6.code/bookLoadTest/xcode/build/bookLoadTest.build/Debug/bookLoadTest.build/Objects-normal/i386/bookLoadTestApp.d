@@ -134,4 +134,5 @@ dependencies: \
   ../../../../../Documents/ehb/internship_files/_cinder_0.8.6_mac/boost/boost/math/special_functions/fpclassify.hpp \
   ../../../../../Documents/ehb/internship_files/_cinder_0.8.6_mac/boost/boost/math/tools/real_cast.hpp \
   ../../../../../Documents/ehb/internship_files/_cinder_0.8.6_mac/boost/boost/container/container_fwd.hpp \
-  ../../../../../Documents/ehb/internship_files/_cinder_0.8.6_mac/include/cinder/Capture.h
+  ../../../../../Documents/ehb/internship_files/_cinder_0.8.6_mac/include/cinder/Capture.h \
+  ../../../../../Documents/ehb/internship_files/_cinder_0.8.6_mac/include/cinder/gl/Fbo.h

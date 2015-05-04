@@ -3,6 +3,7 @@
 
 #include "Book.h"
 #include "Cam.h"
+#include "cinder/gl/Fbo.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -15,6 +16,7 @@ class bookLoadTestApp : public AppNative {
 	void update();
 	void draw();
     void showScanner();
+    void trackCorner();
     void trackCode(Area scanArea, ci::Surface surf);
     
     Cam webc;
@@ -22,13 +24,13 @@ class bookLoadTestApp : public AppNative {
     Boolean BookSet;
     
     int bookCode;
-    
+    Vec2i trackPos;
 };
 
 void bookLoadTestApp::setup(){
     ci::app::setWindowSize(1024, 768);
     //ci::app::setFullScreen();
-    
+    ci::app::setFrameRate(10);
     bookCode = 0;
     BookSet = false;
     webc.setup();
@@ -46,21 +48,65 @@ void bookLoadTestApp::update(){
 }
 
 void bookLoadTestApp::draw(){
-    // clear out the window with black
     gl::clear( Color( 0, 0, 0 ) );
+
     webc.draw();
-    if(bookCode == 0){
+    if(!book.exists(bookCode)){
         showScanner();
     } else if(!BookSet){
         book.setup(bookCode);
         BookSet=  true;
     } else {
+        trackCorner();
+        gl::color(255, 255, 255);
         book.draw();
     }
 }
+void bookLoadTestApp::trackCorner(){
+    vector<Vec2i> arr;
+    Boolean tb = false;
+    Surface s = copyWindowSurface();
+    gl::color(0, 0, 255);
+    
+    ColorAT<unsigned char> c = s.getPixel(trackPos);
+    if(c.r<c.b && c.g<c.b){
+        tb = true;
+    } else if(c.r<c.g && c.b<c.g){
+        tb = false;
+    }
+    for(int i = 0; i<360; i+=5){
+        for (int j = 0; j<50; j+=5) {
+            int x = int(trackPos.x+(j*sin(ci::toRadians(float(i)))));
+            int y = int(trackPos.y+(j*cos(ci::toRadians(float(i)))));
+            
+            
+            ColorAT<unsigned char> c = s.getPixel(Vec2i(x, y));
+            if(tb){
+                if(c.r<c.b && c.g<c.b){
+                    gl::drawSolidCircle(Vec2i(x, y), 2);
+                    arr.push_back(Vec2i(x, y));
+                }
+            } else {
+                if(c.r<c.g && c.b<c.g){
+                    gl::drawSolidCircle(Vec2i(x, y), 2);
+                    arr.push_back(Vec2i(x, y));
+                }
+            }
+            
+        }
+    }
+    Vec2i total;
+    for(int i = 0; i<arr.size(); i++){
+        total.x+=arr[i].x;
+        total.y+=arr[i].y;
+    }
+    total.x = total.x/arr.size();
+    total.y = total.y/arr.size();
+    trackPos = total;
+}
 
 void bookLoadTestApp::showScanner(){
-    int xS = ci::app::getWindowWidth()/2;
+    int xS = ci::app::getWindowWidth()/2+150;
     int yS = ci::app::getWindowHeight()/2;
     int bW = 360;
     int bH = 560;
@@ -71,6 +117,9 @@ void bookLoadTestApp::showScanner(){
     gl::drawStrokedRect(Rectf(xS-(bW/2), yS-(bH/2), xS+(bW/2), yS+(bH/2)));
     gl::drawStrokedRect(Rectf((xS-scanS/2),(yS-scanS/2)-yOffset, xS+(scanS/2), yS+(scanS/2)-yOffset));
     trackCode(Area(int(xS-scanS/2),int((yS-scanS/2)-yOffset), int(xS+(scanS/2)), int(yS+(scanS/2)-yOffset)), surfScan);
+    
+    trackPos.x = (xS+bW/2)-10;
+    trackPos.y = (yS-bH/2)-10;
     
 }
 
@@ -137,6 +186,7 @@ void bookLoadTestApp::trackCode(Area scanArea, ci::Surface surf){
                 
             }
         }
+    //ci::app::console() << total << "\n";
     bookCode = total;
         
         
