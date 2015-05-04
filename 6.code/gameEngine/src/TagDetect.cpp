@@ -87,7 +87,7 @@ void TagDetect::getCode(Area scanArea, ci::Surface surf, int offset){
             }
         }
     tracked.push_back(total);
-    ci::app::console() << total << "\n";
+    //ci::app::console() << total << "\n";
     
     
 }

@@ -26,7 +26,6 @@ class gameEngineApp : public AppNative {
 
 void gameEngineApp::setup()
 {
-    ci::app::setWindowPos(500, 500);
     ci::app::setFrameRate(2);
     
     c.setup();

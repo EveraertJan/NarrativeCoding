@@ -1,0 +1,26 @@
+//
+//  Book.h
+//  bookLoadTest
+//
+//  Created by jan everaert on 04/05/15.
+//
+//
+
+#pragma once
+#include "cinder/gl/Texture.h"
+#include "cinder/ImageIo.h"
+
+class Book{
+public:
+    void setup(int c);
+    void draw();
+    void update();
+    
+    int code;
+    Boolean scanned;
+    Boolean codeMoment;
+    
+    Boolean isFound;
+    ci::gl::Texture cover;
+    
+};
