@@ -31,7 +31,7 @@ public:
 void bookLoadTestApp::setup(){
     ci::app::setWindowSize(1024, 768);
     //ci::app::setFullScreen();
-    ci::app::setFrameRate(10);
+    ci::app::setFrameRate(24);
     bookCode = 0;
     BookSet = false;
     webc.setup();
@@ -93,10 +93,12 @@ void bookLoadTestApp::trackCorner(){
             ColorAT<unsigned char> c = s.getPixel(Vec2i(x, y));
             if(tb){
                 if((c.b - c.r)>treshold && (c.b - c.g)>treshold){
+                    gl::color(0, 0, 255);
                     gl::drawSolidCircle(Vec2i(x, y), 2);
                     arr.push_back(Vec2i(x, y));
                 }
             } else {
+                gl::color(0, 255, 0);
                 if((c.g - c.b)>treshold && (c.g - c.r)>treshold){
                     gl::drawSolidCircle(Vec2i(x, y), 2);
                     arr.push_back(Vec2i(x, y));
@@ -105,7 +107,7 @@ void bookLoadTestApp::trackCorner(){
             
         }
     }
-    if(arr.size()>0){
+    if(arr.size()>10){
         Vec2i total;
         for(int i = 0; i<arr.size(); i++){
             total.x+=arr[i].x;
@@ -114,6 +116,8 @@ void bookLoadTestApp::trackCorner(){
         total.x = total.x/arr.size();
         total.y = total.y/arr.size();
         trackPos = total;
+    } else {
+        book.codeMoment = false;
     }
     arr.clear();
     
@@ -126,11 +130,13 @@ void bookLoadTestApp::trackCorner(){
             ColorAT<unsigned char> c = s.getPixel(Vec2i(x, y));
             if(tb){
                 if((c.b - c.r)>treshold && (c.b - c.g)>treshold){
+                    gl::color(0, 0, 255);
                     gl::drawSolidCircle(Vec2i(x, y), 2);
                     arr.push_back(Vec2i(x, y));
                 }
             } else {
                 if((c.g - c.b)>treshold && (c.g - c.r)>treshold){
+                    gl::color(0, 255, 0);
                     gl::drawSolidCircle(Vec2i(x, y), 2);
                     arr.push_back(Vec2i(x, y));
                 }
@@ -138,7 +144,7 @@ void bookLoadTestApp::trackCorner(){
             
         }
     }
-    if(arr.size()>0){
+    if(arr.size()>10){
         Vec2i total;
         for(int i = 0; i<arr.size(); i++){
             total.x+=arr[i].x;
@@ -147,6 +153,8 @@ void bookLoadTestApp::trackCorner(){
         total.x = total.x/arr.size();
         total.y = total.y/arr.size();
         trackPos2 = total;
+    } else {
+        book.codeMoment = false;
     }
 
 }

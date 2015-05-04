@@ -13,10 +13,9 @@ void Book::setup(int c){
     code = c;
     isFound = false;
     try{
-        if(code == 1552){
-            cover = loadImage( cinder::app::loadAsset( "bookCover_1552.png" ) );
-            isFound = true;
-        }
+        cover = loadImage( cinder::loadUrl("http://www.crashlab.be/storyblocks/get/bookCover_"+ci::toString(code)+".png"));
+        //cover = loadImage( cinder::app::loadAsset( "bookCover_"+ci::toString(code)+".png" ) );
+        isFound = true;
     } catch ( ... ){
         ci::app::console() << "asset not found ";
     }
@@ -31,12 +30,14 @@ void Book::draw(){
         float dY = dispPosDown.y-dispPosTop.y;
         
         float angleD = (atan2f(dY, dX)*180/pi)-90;
-        ci::app::console() << angleD << "\n";
+        //ci::app::console() << angleD << "\n";
         
         ci::gl::pushMatrices();
-        ci::gl::translate(dispPosTop.x-360+10, dispPosTop.y-10);
+        ci::gl::translate(dispPosTop.x-180+20, dispPosTop.y+290-10);
         ci::gl::rotate(angleD);
-        ci::gl::draw(cover);
+        ci::gl::enableAlphaBlending();
+        ci::gl::draw(cover, ci::Vec2f(-180, -280));
+        ci::gl::disableAlphaBlending();
         ci::gl::popMatrices();
     }
 }
