@@ -131,6 +131,7 @@ dependencies: \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/boost/boost/math/special_functions/fpclassify.hpp \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/boost/boost/math/tools/real_cast.hpp \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/boost/boost/container/container_fwd.hpp \
+  ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/gl/Texture.h \
   /Users/janeveraert/GitHub/storyblocks/6.code/mvp_v1_1/xcode/Character.h \
   /Users/janeveraert/GitHub/storyblocks/6.code/mvp_v1_1/xcode/Conversions.h \
   /Users/janeveraert/GitHub/storyblocks/6.code/mvp_v1_1/include/Resources.h \

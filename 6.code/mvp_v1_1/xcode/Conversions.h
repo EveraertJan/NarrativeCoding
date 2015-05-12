@@ -14,6 +14,6 @@ public:
     void setup(int totalMovements);
     void setMovement(int pointer, ci::Vec2i posC);
     ci::Vec2i getMovement(int pointer);
-    
+    Boolean isSet(int pointer);
     std::vector<ci::Vec2i> movements;
 };

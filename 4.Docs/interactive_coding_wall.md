@@ -297,3 +297,4 @@ the program executes the array now, being able to perform actions and if else st
 
 the first groups is a set of vars. these are dynamically added and changed throughout the array. this means this class has a set of vectors, which can contain some kind of variable. 
 the main issue here is the addressability of the variables. maybe it is possible that this class has two main variables, and works as a container for a certain variable. 
+

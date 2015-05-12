@@ -189,13 +189,6 @@ void Tracker::getCorners(ci::Surface s){
     } else {
         isGreen = false;
     }
-    /*
-    ci::gl::drawSolidCircle(trackPos2, 2);
-    if(trackPos.distance(trackPos2)>bookSize*2){
-        BookSet = false;
-        bookCode = 0;
-        
-    }*/
     
 
 }

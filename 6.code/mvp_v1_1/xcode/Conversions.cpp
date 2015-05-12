@@ -28,3 +28,15 @@ ci::Vec2i Conversions::getMovement(int pointer){
         return ci::Vec2i(0, 0);
     }
 }
+Boolean Conversions::isSet(int pointer){
+    try {
+        ci::Vec2i v = movements.at(pointer);
+        if(v == ci::Vec2i(0, 0)){
+            return false;
+        } else {
+            return true;
+        }
+    } catch ( ... ){
+        return false;
+    }
+}

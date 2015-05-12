@@ -61,13 +61,13 @@ void mvp_v1_1App::update(){
 }
 
 void mvp_v1_1App::readCards(){
-    ci::app::console() << "init \n";
     c.input.clear();
     c.passes.clear();
     for(int i  =0; i<cardPos.size(); i++){
         int code = track.getCode(copyWindowSurface(cardPos.at(i)), false);
         //ci::app::console() << code << "\n";
-        if(c.checkCode(code)){
+        if(c.conv.isSet(code)){
+            ci::app::console() << "pushed \n";
             c.input.push_back(code);
         }
     }
@@ -106,20 +106,34 @@ void mvp_v1_1App::draw(){
         if(c.running && !c.died){
             if(compiled){
                 setFrameRate(2);
+                gl::pushMatrices();
+                float dX = b.dispPosDown.x-b.dispPosTop.x;
+                float dY = b.dispPosDown.y-b.dispPosTop.y;
+                
+                float angleD = (atan2f(dY, dX)*180/pi)-90;
+                
+                ci::gl::pushMatrices();
+                ci::gl::translate(((b.dispPosTop.x-bookSize))+20, ((b.dispPosTop.y+b.dispPosDown.y)/2-bookSize*1.5/2)+20);
+                ci::gl::rotate(angleD);
+                float scale = ((bookSize*1.0)/600);
+                ci::gl::scale(scale, scale);
+                ci::gl::enableAlphaBlending();
+
                 c.draw(true);
+                gl::popMatrices();
             }else {
                 c.compile();
+                ci::app::console() << c.passes.size() << "\n";
                 compiled = true;
             }
         } else {
             setFrameRate(30);
             if(b.isFound){
-                c.draw(false);
+                //c.draw(false);
             }
             
         }
     }
-	// clear out the window with black
 	
 }
 void mvp_v1_1App::showScanner(){

@@ -10,9 +10,9 @@
 
 
 void Compiler::setup(int code){
-    ch.setup(5, 5);
-    curPosition = ci::Vec2i(5, 5);
-    conv.setup(3000);
+    ch.setup(0, 3);
+    curPosition = ci::Vec2i(0, 3);
+    conv.setup(100000);
     fillConversion();
     
     buildLevel(code);
@@ -24,6 +24,7 @@ void Compiler::setup(int code){
 }
 void Compiler::draw(Boolean play){
     if(play){
+        drawScenery();
         if(curPas<passes.size()){
                 ch.updatePos(passes.at(curPas));
                 ci::app::console() << "passing on: " << passes.at(curPas) << "\n";
@@ -37,14 +38,11 @@ void Compiler::draw(Boolean play){
     } else {
         ch.draw();
     }
-    drawScenery();
 }
 void Compiler::compile(){
     curPas = 0;
     
     std::vector<int> toEx;
-    toEx.push_back(0);
-    toEx.push_back(0);
     toEx.push_back(0);
     for(int i = 0; i<input.size(); i++){
         //if(input.at(i)>10){
@@ -124,7 +122,8 @@ int Compiler::validMove(ci::Vec2i move){
 void Compiler::buildLevel(int level){
     ci::Surface s;
     try{
-        s = cinder::loadImage( cinder::loadUrl("http://www.crashlab.be/storyblocks/get/level_"+cinder::toString(level)+"_1.png"));
+        s = cinder::loadImage( cinder::loadUrl("http://www.crashlab.be/storyblocks/get/structure_"+cinder::toString(level)+"_1.png"));
+        background = cinder::loadImage( cinder::loadUrl("http://www.crashlab.be/storyblocks/get/background_"+cinder::toString(level)+"_1.png"));
         ci::app::console() << "it is loaded \n";
     } catch ( ... ){
         ci::app::console() << "can't load level \n";
@@ -133,11 +132,11 @@ void Compiler::buildLevel(int level){
     
     for(int i = 0; i<10; i++){
         for (int j = 0; j<10; j++){
-            cinder::ColorAT<unsigned char> color = s.areaAverage(ci::Area(i*50+10, j*50+10,i*50+40, j*50+40));
+            cinder::ColorAT<unsigned char> color = s.areaAverage(ci::Area(i*80+10, j*80+10,i*80+70, j*80+70));
             if(color.r == 255 && color.g == 0 && color.b == 0){
                 addHole(ci::Vec2i(i, j));
             }
-            if(color.r == 0 && color.g == 0 && color.b == 255){
+            if(color.r < 50 && color.g < 50 && color.b > 150){
                 addBlock(ci::Vec2i(i, j));
             }
         }
@@ -152,28 +151,23 @@ void Compiler::addHole(ci::Vec2i pos){
     holes.push_back(pos);
 }
 void Compiler::fillConversion(){
-    conv.setMovement(1, ci::Vec2i(1, 1));
+    conv.setMovement(0, ci::Vec2i(0,0));
+    conv.setMovement(1, ci::Vec2i(1,0));
     conv.setMovement(2, ci::Vec2i(0, -1));
     conv.setMovement(2144, ci::Vec2i(0, 1));
     conv.setMovement(1552, ci::Vec2i(1, 0));
     conv.setMovement(4, ci::Vec2i(-1, 0));
     conv.setMovement(5, ci::Vec2i(1, 0));
 }
-Boolean Compiler::checkCode(int c){
-    if(conv.getMovement(c) == ci::Vec2i(0, 0)){
-        return false;
-    } else {
-        return true;
-    }
-}
 void Compiler::drawScenery(){
-    ci::gl::color(0, 0, 0);
+    ci::gl::color(255, 255, 255);
+    ci::gl::draw(background, ci::Rectf(0, 0, 500, 500));
+   /* ci::gl::color(0, 0, 0);
     for(int i = 0; i<holes.size(); i++){
         ci::gl::drawSolidRect(ci::Rectf(holes.at(i).x*50, holes.at(i).y*50, holes.at(i).x*50+50, holes.at(i).y*50+50));
     }
     ci::gl::color(200, 0, 0);
     for(int i = 0; i<blocks.size(); i++){
         ci::gl::drawSolidRect(ci::Rectf(blocks.at(i).x*50, blocks.at(i).y*50, blocks.at(i).x*50+50, blocks.at(i).y*50+50));
-    }
-    ci::gl::color(255, 255, 255);
+    }*/
 }

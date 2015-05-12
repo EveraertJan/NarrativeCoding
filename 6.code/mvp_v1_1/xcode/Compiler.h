@@ -9,6 +9,7 @@
 
 #include "cinder/app/appBasic.h"
 #include "cinder/Utilities.h"
+#include "cinder/gl/Texture.h"
 #include "Character.h"
 #include "Conversions.h"
 #include "Resources.h"
@@ -22,7 +23,6 @@ public:
     void addBlock(ci::Vec2i pos);
     void addHole(ci::Vec2i pos);
     void drawScenery();
-    Boolean checkCode(int c);
     void buildLevel(int level);
     
     void fillConversion();
@@ -34,6 +34,7 @@ public:
     Character ch;
     Conversions conv;
     
+    ci::Surface background;
     
     int curPas;
     ci::Vec2i curPosition;
