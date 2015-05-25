@@ -1,0 +1,44 @@
+//
+//  Conversions.cpp
+//  storyBlocks_v2
+//
+//  Created by jan everaert on 25/05/15.
+//
+//
+
+
+
+#include "Conversions.h"
+
+void Conversions::setup(int totalMovements){
+    for(int i = 0; i<totalMovements; i++){
+        movements.push_back(ci::Vec2i(0, 0));
+    }
+}
+
+void Conversions::setMovement(int pointer, ci::Vec2i posC){
+    try{
+        movements.at(pointer) = posC;
+    } catch ( ... ){
+        ci::app::console() << "not there \n";
+    }
+}
+ci::Vec2i Conversions::getMovement(int pointer){
+    try{
+        return movements.at(pointer);
+    } catch ( ... ){
+        return ci::Vec2i(0, 0);
+    }
+}
+Boolean Conversions::isSet(int pointer){
+    try {
+        ci::Vec2i v = movements.at(pointer);
+        if(v == ci::Vec2i(0, 0)){
+            return false;
+        } else {
+            return true;
+        }
+    } catch ( ... ){
+        return false;
+    }
+}

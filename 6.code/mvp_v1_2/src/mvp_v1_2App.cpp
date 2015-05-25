@@ -63,7 +63,6 @@ void mvp_v1_2App::draw()
             //draw Green card
             
         } else if(pageCode == 3){
-            
             ui.drawFinal();
             //draw stats
             
