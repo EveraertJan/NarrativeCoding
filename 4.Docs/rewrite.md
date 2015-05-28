@@ -19,6 +19,8 @@ Ik kreeg bij dit poject hulp van een aantal personen, Waaronder mijn ouders, Wou
 --> bullet list of contributions
 --> paper provides claim
 
+------
+
 #de onderzoeksvraag
 
 ##onderzoeksafbakening##
@@ -67,10 +69,12 @@ Naarmate het onderzoek vorderde, kwamen een aantal andere onderzoeksvragen aan b
 Het vooropgestelde resultaat zal een verhaal bevatten, dat op bepaalde momenten het kind zal vragen een stukje te programmeren alvorens verder te gaan met het verhaal. Dit proces wordt ondersteund met een projectie en de nodige tips. Het aantal stukjes code dat hiervoor gebruikt kunnen worden zal in dit onderzoek beperkt worden. Het programma zal gebruik maken van empathie en andere technieken om het kind te motiveren.
 
 
+=====
 
+#onderzoek
 
-##onderzoek
-###nut van programmeren
+-----
+##programmeren
 
 In 2014 gaf de EU een rapport uit dat het integreren van programmeren in het lager onderwijs bespreekt. Het gaat hier vooral over landen die dit reeds doen (zoals estland) waar eveneens over landen die dit van plan zijn in de nabije toekomst (waaronder België). Ook het nut van programmeren in een schoolomgeving komt hierin aan bod, met het oog op de toekomst van zowel de economie (meer programmeurs), maar belangrijker nog, met het oog op het kind. <br /><br />
 Mitch Resnick (MIT, medeoprichter van Scratch) vergelijkt programmeren met schrijven; slechts weinig van de kinderen worden professioneel schrijver, maar kunnen schrijven is steeds handig. Hij vindt dat dit ook geldt voor code. Men moet niets computergerelateerd kiezen als beroep om de opgedane kennis te gebruiken. Programmeren stimuleert volgens Mitch het creatief denken, het systematisch redeneren en het samenwerken in teamverband. Verder kan het kind ideeën naar buiten brengen op deze manier.
@@ -79,11 +83,11 @@ Dit inzicht komt terug bij Derek Cabrera. Hij beschrijft in zijn TED-talk dat so
 <br /><br />
 21st century skills stelt dat onze maatschappij van een industriele samenleving naar een kennis-samenleving veranderd is. Hun doel is het onderwijs aan te passen om beter aan te sluiten bij dat beeld van de 21ste eeuw. De europese unie is hier reeds mee bezig, samen met bv unesco en een aantal amerikaanse organisaties. Nederlandse beleidsmakers zijn hier zeker reeds in betrokken in de context waarin ze werken. Deze discussie wordt helaas nog niet helemaal doorgetrokken naar het onderwijs. Deze skills zouden even belangrijk moeten zijn dan wiskunde of nederlands. Joke Voogt is voorstander van een publiekdebat die deze discussie opentrekt waarin ook ouders en studenten hun mening kunnen uiten. 
 
-####digitale samenleving
+###digitale samenleving
 de digitalisering van de samenleving is enorm merkbaar in de tewerkstelling. Het aantal beroepen waarin productiewerk vericht wordt, daalt snel, en de beroepen waarin men creatief moet nadenken en probleemoplossend moet werken, zit in de lift. In die laatste categorie is een degelijke ITkennis natuurlijk noodzakelijk. Vooral voor communicatie, maar eveneens om de efficientie te verhogen. Daarom is het belangrijk dat we dit al van jongsafaan kunnen meegeven. 
 
 
-####21st century skills
+###21st century skills
 De term 21st century skills heeft betrekking op een geheel van vaardigheden die nodig zijn te functioneren in de huidige samenleving. Deze samenleving wordt onderverdeeld in een aantal groepen. De belangrijkste groepen zijn "digital natives" en "digital immigrants".
 
 De digital natives zijn in dit onderzoek de belangrijkste doelgroep. Zij zijn mee opgegroeid met de technologie, en ontdekken nieuwe ontwikkelingen en toepassingen, volledig onbevangen. Deze groep heeft weinig tot geen moeilijkheden met het gebruiken van nieuwe technologie, en zijn hier snel mee weg.
@@ -102,7 +106,7 @@ Het grote verschil tussen deze twee groepen is het gemak waarmee men overschakel
 
 De nadruk in dit onderzoek zal liggen op het probleemoplossend denken en creativiteit. Dit omdat deze vaardigheid gestimuleerd wordt door programmeeractiviteiten en de denkwijze die hiermee gepaard gaat.
 
-####Algoritmisch denken
+###Algoritmisch denken
 
 Algoritmisch denken (ook beschreven als algoritmisch denken) betekend letterlijk "denken over denken" (meta=over, cognos=denken). Algoritmisch denken wordt door de EU omschreven als "de mogelijkheid een probleem op te lossen via een stap-voor-stap oplossing (algoritme), waarin deze bestaat uit een eindige set duidelijk gedefinieerde stappen". 
 
@@ -113,7 +117,7 @@ Het aanleren van deze vaardigheid gebeurd reeds in de alternatieve programma's. 
 Scratch kan een opstap zijn naar programma's als java, visual basic of javascript, zonder de leerling al direct te confronteren met het zoeken naar bugs als komma's of aanhalingstekens.
 Dit kan namelijk een grote drempel vormen, omdat en programmeur veel tijd doorbrengt een code te debuggen. Het werken met voorgemaakte blokjes neemt deze drempel weg.
 
-####programming
+###programming
 Men kan het natuurlijk niet hebben over programmeren zonder de meest pure vorm te bespreken. Programmeren kent vele definities. de volgende is diegene die de EU gebruikt in zijn rapport:
 
 <i>“Het kunnen realiseren van een algoritme in machinetaal, de stappen die genomen zijn kunnen interpreteren, [...] het kunnen compileren, runnen en debuggen van een programma, alsook het kunnen identificeren en herbruiken van designpatterns”</i>
@@ -121,12 +125,90 @@ Men kan het natuurlijk niet hebben over programmeren zonder de meest pure vorm t
 Dit soort programmeren heeft en stijle leercurve. Het duurt even vooraleer men een eigenlijke output heeft, en het aanleren van de syntax neemt de nodige tijd in beslag. Kinderen kunnen hierdoor gedemotiveerd geraken, en haken af als gevolg. Daarom wordt in dit project gebruik gemaakt van een abstractere vorm hiervan. Een vorm waarin de syntax niet zichtbaar is voor de gebruiker, en deze ook niet aan de nodige haakjes, komma's of punt-komma's moet denken. 
 
 
+Programmeren laat zich onderverdelen in een aantal categorieen. 
+
+####algoritmisch denken
+dit omvat het programmeren zonder eefectief code te schrijven. Enkel standaard acties zijn hierin opgenomen. Variabelen en andere structuren komen hierin niet aan bod. 
+Het oplossen van een probleem (meestal het bereiken van een bepaalde plek op het speelveld) kan hier opgelost worden door een opeenvolging van stappen zoals "stap naar rechts", "stap naar boven", en meer van dit sort blokken. Zoals eerder vermeld is deze vorm zeer geschikt voor jonge kinderen. Ze kunnen hier snel mee aan de slag en zien zeer snel resultaat.
+Dit is echter wel een ideale manier om snel en duidelijk een eerste probleem onder te verdelen in kleine stappen, en de drempel naar het volgende niveau is zeer laag.
+Voor ouderen is dit echter niet heel uitdagend, omdat de gelijkheid met het volgende level vaak te groot is en het als bandwerk aanvoelt.
+
+####metaforisch programmeren
+In deze stap (die meestal volgt op de vorige) komen de eerste programmeerstructuren naar boven. Kinderen en volwassenen maken kennis met een "for loop", en een "if else" structuur. Ook variabelen komen hier aan bod. 
+De gemakelijkste manier om deze vorm te gebruiken is door de code onder te verdelen in kant en klare blokjes. Deze kan de gebruiker dan aaneenschakelen en een groter geheel vormen. 
+In veel applicaties kan deze vorm voorgesteld worden als een efficiënter alternatief voor algoritmisch denken.
+
+####flow programming
+Flow programming wordt voorgesteld in progammas zoals pure data. De gebruiker verbind blokjes die een actie of voorwaarde voorstellen met elkaar, om zo het programma uit te voeren. Deze vorm laat echter slechts moeilijk de implementatie van programmeerstructuren toe. 
+
+####programming
+Dit is de meest bekende vorm van programmeren. In deze vorm is de syntax van groot belang, en vele programmeertalen maken gebruik van deze vorm van programmeren. De nadruk ligt in deze vorm op ht correct aanroepen van de juiste functies, en er moet vooraf heel hard nagedacht worden over de manier van implementatie. Deze vorm neemt ook de nodige tijd in beslag. 
+
+###in conclusion
+Programmeren leert het kind op een andere manier nadenken over een probleem. Het bevorderd het opdelen van een groot probleem in kleinere deelproblemen, en vlotter naar een oplossing te zoeken. Het algoritmisch nadenken staat het kind ook toe bepaalde acties die herhaald moeten worden misschien efficienter uit te voeren.
+
+----- 
+
+##storytelling
+
+Om volledig te kunnen begrijpen wat een narratief kan betekenen voor een gebruiker, en hoe we dit kunnen gebruiken, moeten we natuurlijk eerst definnieren hoe een verhaal in elkaar zit.
+
+###oorsprong van verhalen
+
+Verhalen zijn doorheen de tijd vaak veranderd. Ze zijn introverter geworden (mensen lezen verhalen zelf, zonder ze aan anderen te vertellen), zijn zijn van mondelinge vorm naar een geschreven vorm gegaan. Doorheen de jaren zijn er ook meer en meer geworden. 
+
+We vertellen al verhalen sinds het begin van mensenheugenis, denk maar aan de rotstekeningen in frankrijk. In die tijd werden verhalen vooral verteld, om geschiedenis door te geven, of fenomenen te verklaren. Met de komst van een geschreven taal zijn we deze verhalen ook beginnen neerschrijven. Het is echter pas sinds de uitvinding van de boekdrukkunst dat we deze in geschreven vorm ook beginnen verspreiden zijn. De tijd tussen deze eerste vooruitgangen spreid zich echter over duizenden jaren. Pas met de komst van de film is het echt snel beginnen gaan. Na film kwam radio en tv, waarna computers en het internet het rijtje voegden om verhalen door te geven. 
+
+Elke van deze uitvindingen brachten met zich mee dat artiesten een nieuwe manier hadden om verhalen te vertellen, maar ook hun verhalen aan te passen naar het gebruikte medium. Denk maar aan de uitvinding van de stop-motion truck in de filmwereld, waarmee het plots mogelijk werdt verhalen anders vorm te geven, en andere verhalen te vertellen. Acties moesten niet meer mogelijk zijn, men kon truckeren.
+
+In 2005 kwam youtube uit. Dit is een van de grotere milestones in het vertellen van verhalen. Het werd mogelijk voor iedereen met een camera (elk soort camera) eigen verhalen en films te verspreiden. Dit in combinatie met het goedkoper worden van de filmcamera en smartphones zorgt voor een enorme boost in het aantal en de kwaliteit van verspreidde films, en dus ook verhalen. 
+
+Nieuwe technologie gaat ook vaak gepaard met een nieuwe vorm van verhaalvertelling. Denk maar aan Vines, een van de recentere vormen hiervan. een online platform waarin de gebruiker een luttele 7 seconden kreeg om zijn punt, of verhaal, in duidelijk te maken. 
 
 
-##details
+
+
+##nut van storytelling
+
+Het vertellen van verhalen heeft geen echte regels. Eerder wegwijzers. Er zijn een aantal guidelines waar aan gedacht kan worden, maar die niet nodig zijn om het schrijven van verhaal tot een goed einde te brengen.  Vaak zijn de verhalen die afwijken van deze regels eerder succesvol, omdat de lezer verast wordt.
 
 
 
-##related work
+###fundamentals of digital storytelling
+
+Als we spreken over digital storytelling, bedoelen we vooral een verhaal dat ondersteund wordt door een xtra laag, die vaak computergestuurd is. Die laag kan aanvullend zijn, zoals het gebruik van augmented reality in een boek. Hij kan echter ook de enige laag zijn die we zien. Dit is vaak het geval in games of films. De gebruiker ziet het verhaal slechts afgespeeld op zijn scherm, en heeft hierop niet veel invloed. 
+
+de focus mag niet enkel liggen op het medium, er moet ook gedacht worden aan de manier van interactie, aan de hoeveelheid ervan, of het aantal variabelen waar de lezer mee te werk kan gaan. Men neemt hier vaak het voorbeeld van games. Deze werken eveneens met een narratief, dat vaak de input van users nodig heeft om te vorderen. Omdat dit proces zeer persoonlijk is, is het moeilijk een algemeen beeld op te stellen hiervan. de ervaring van de interactiviteit varieert van speler tot speler. 
+
+De meeste focus in dit stuk ligt op de interactiviteit tussen speler en narratief. Ik heb lang gespeeld met het idee het verhaal te laten variëren naarmate andere stukken code neergelegd werden, maar dit bracht met zich mee dat het fysieke boek meerdere delen moest bevatten. Naarmate de speler andere code neerlegde zou hem/haar meegedeeld worden door te gaan naar een bepaalde pagina, waar het verhaal dan een andere wending nam. Dit is mogelijk, maar vergt extra tijd. Vooral omdat het verhaal dan via een boomstructuur verloopt, en verschillende zijverhalen moeten geschreven worden.
+
+digitale verhalen (zoals games en interactive stories) hebben het voordeel abstracte onderwerpen meer toegankelijk te maken voor verscheidene doelgroepen. zo zijn er bijvoorbeeld veel youtube kanalen die gebruik maken van een narratief om ingewikkelde wetenschappelijke onderwerpen op een klare manier uit te leggen. Ze kunnen ook helpen leerstof aantrekkelijker te maken, en zo minder gemotiveerde studenten toch aan te zetten tot leren. Het gebruik van de creativiteit van de gebruiker en zijn diepere gedachten creëren een sterker gevoel van doel in het leren (Hull and Katz, 2006). 
+
+een narratieve context voegt tevens betekenis toe, en legt verbindingen in je hersenen naar contexten die je herkent, waardoor je het beter opneemt en dus beter leert. Leren is verbindingen leggen in de hersenen, en een betekenisvolle context helpt daarbij.
+
+###De sleutel tot een goed verhaal (volgens andrew stanton)
+
+het vertellen van een verhaal loopt gelijk aan het vertellen van een mop. Je weet op voorhand hoe het verhaal to stand zal komen, en hoe het zal aflopen. Alles moet leiden tot 1 uiteindelijk resultaat. Veelal is dit een doel van het hoofdpersonage. Soms is dit doel niet specifiek uitgesproken. Het kan dieper liggen dan waar het verhaal over gaat. Dit doel zorgt niet altijd voor de goede beslissing. De hoofdrol kan volledig de verkeerde richting uitgestuurd worden.
+
+We kijken verhalen om te voelen, meevoelen met de protagonist. Volgens Andrew Stanton willen we ook vooral onszelf in de schoenen van de protagonist kunnen plaatsen. Verhalen laten ons dus toe gelijkheden tussen onszelf en anderen (in een andere tijd of ruimte) te kunnen voelen, of meemaken. 
+
+<i>“there isn’t anyone you couldn’t learn to love, once you’ve heard their story”</i>
+
+Andrew spreekt in zijn talk ook grotendeels over “a promise worth your time”. Een belofte die aan het begin van het verhaal gemaakt worden en waar naartoe geleefd kan worden. Een belofte die de lezer beloofd dat zijn tijd waardig besteed zal worden. Een van de meest gebruikte zinnen om dit te doen is “er was eens”. Andrew bschrijft het belang van deze belofte als een steentje, in een katapult. het katapulteert de lezer/luisteraar door het verhaal, tot aan het einde.
+
+Lezers, luisteraars, of kijkers willen best werken voor hun verhaal. ze willen het alleen niet expliciet weten. Het voelt meer aan als een eigen werk als je zelf de gaten kan invullen, onbewust. Als voorbeeld kan Wall-E aangehaald worden. een film over een afvalrobot die achterblijft op een vervuilde planeet( pixar ). Wall-e kan niet praten, en dus moet het publiek zelf werken voor hun eten (uitspraak ).
+
+
+###quotes
+<i>“drama is anticipation mingled with uncertainty”</i>
+
+
+<i>“we zijn op een punt in digital storytelling waar we niet goed weten wat te vertellen, maar enthousiast zijn over de mogelijkheden.” dit was een situatie die voorkwam in het begin van film, waar mensen filmpjes animeerden waarin geen verhaal verteld wordt, maar vooral de effecten getoond werden.</i>
+
+<i> work with tools of today, not with the promises of tomorrow</i>
+
+
+
+
 
 ##conclusions and further work
