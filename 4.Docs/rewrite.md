@@ -25,17 +25,16 @@ Ik kreeg bij dit poject hulp van een aantal personen, Waaronder mijn ouders, Wou
 
 ##onderzoeksafbakening##
 
-<i> doelgroep!</i>
-
 
 ###probleemschets
 Er zijn reeds een aantal applicaties met het doel kinderen te leren programmeren. Dit gebeurd vaak in de vorm van een spel of kleine opdrachten. Deze applicaties missen helaas vaak een doel, naast het ontwikkelen van een klein spel. Een narratief kan ervoor zorgen dat kinderen langer gemotiveerd zijn, en minder snel afhaken omdat opdrachten op elkaar beginnen lijken. In deze applicaties worden verschillende programeeronderdelen ook duidelijk een voor een aangeboden, in plaats van dit op een minder opvallende manier te doen. Elke opdracht is ook verschillend van de vorige. Het kind doorloopt dus een aantal opdrachten, en weet na de laatste opdracht elk onderdeel correct te gebruiken. Het doel van het narratief is deze onderdelen aan elkaar te binden, zodat het geheel een grote opdracht wordt, zonder ht kind "opdrachten" op te leggen. 
+
+De doelgroep van dit project ligt vooral tusen 8 en 12. Dit is een leeftijdklasse waarin lezen vaak niet veel moeite vraagt, en de focus dus kan liggen op het schrijven van de code. 
 
 ###doel van het onderzoek
 Het onderzoek dient duidelijk te maken of een narratief effectief kan bijdragen aan een leukere leerervaring. Dit via een hands-on ervaring, en een empathische band met het hoofdpersonage van het verhaal. Het resultaat van dit onderzoek zal ook een POC (proof of concept) bevatten in de vorm van een applicatie die een extra dimensie geeft aan een verhaal, en het toestaat meerdere verhalen met dezelfde appicatie te kunnen gebruiken. 
 
 ###onderzoeksvragen
-
 
 ####centrale vraag
 <i> Hoe kunnen we kinderen aanzetten tot coderen in een narratieve omgeving, en aan welke voorwaarden moet de digitale omgeving voloen om succesvol te zijn.</i>
@@ -201,14 +200,51 @@ Lezers, luisteraars, of kijkers willen best werken voor hun verhaal. ze willen h
 
 ###quotes
 <i>“drama is anticipation mingled with uncertainty”</i>
+“technology is as ambiguous as the air we breath” godfrey Reggio
+“work with technology that exists, not with the promises of tomorrow” tawny schlieski
+
+
+
 
 
 <i>“we zijn op een punt in digital storytelling waar we niet goed weten wat te vertellen, maar enthousiast zijn over de mogelijkheden.” dit was een situatie die voorkwam in het begin van film, waar mensen filmpjes animeerden waarin geen verhaal verteld wordt, maar vooral de effecten getoond werden.</i>
 
 <i> work with tools of today, not with the promises of tomorrow</i>
 
+------
+#Resultaat
+##algemene structuur
+Het programma werkt via een aantal fasen. Deze laten toe dat er toevoegingen kunnen gebeuren zonder te moeten zoeken in een ingewikkelde structuur van als-dan loops. Om de code duidelijk en gestructureerd te houden wordt er natuurlijk ook gewerkt met klassen. Niet alle klassen zullen in dit document uitgebreid besproken worden.
 
+###De interfaceklasse
+Deze klasse neemt de visuele output voor zijn rekening. Het zorgt ervoor dat de gebruiker weet wara het boek gelegd moet worden om gescanned te worden, of welke codeblokjes met elkaar verbonden zijn. Om dit overzichtelijk te houden heeft elke status een eigen functie. 
 
+Deze klasse is pas vrij laat toegevoegd, omdat de nood aan een uitgebreide visuele output mij pas duidelijk werd na een gesprek met Beyond.io. Deze output bestond al reeds maar werdt vooral door de hoofdklasse afgehandeld. 
+###De verhaalklasse
+Deze klasse wordt pas aangeroepen als een nieuw boek gescanned wordt. Indien dit zich voordoet haalt deze klasse de nodige bestandenuit een online file-structuur. Deze zal eveneens een foutmelding weergeven als het gescannede boek niet herkend wordt. Eens deze bestanden opgeslagen zijn zal deze klasse dienen als een centrale verzamelplaats waar andere klassen informatie uit kunnen halen, zoals bijvoorbeeld de compilatieklasse en de visuele weergave van het desbetreffende level.
 
+###De compilatieklasse
+Deze klasse heeft een aantal zeer verschillende vormen ondergaan. Dit omdat de eigenlijke werking vrij ingewikkeld in elkaar zit. De klasse krijgt aanvankelijk een serie getallen door, die deze omzet in acties. Dit was natuurlijk een gemakkelijke functie, tot het gebruik van for-loops (herhaling van een aantal acties) in het blikveld terecht kwam. Hieronder wordt het gehele proces opgedeeld in een aantal stappen.
+
+####Stap 1
+De eerste stap gebeurd reeds voor de gebruiker kaarten heeft neergelegd. In deze stap zal de compiler het speelveld opdelen in een aantal blokken. Sommige blokken zorgen ervoor dat de speler niet verder kan, anderen zijn zogenaamde valkuilen, waar de speler opnieuw moet beginnen indien hij deze raakt. 
+
+####Stap 2
+De speler heeft zijn kaarten gelegd, en heeft een groene kaart in de desbetreffende zone gelegd om duidelijk te maken dat hij zijn sequentie wil testen. 
+De compiler zal hierop een eerste keer over de serie getallen lopen, om op zoek te gaan naar een for-loop. Indien deze tegengekomen wordt, zal hij de acties binnen deze loop herhalen. Het aantal herhalingen hangt af van wat de gebruiker ingegeven heeft. 
+
+####Stap 3
+Nadat alle speciale acties zijn omgezet in een lange serie afzonderlijke acties, zal deze klasse uitzoeken of de uitvoer mogelijk is. Omdat deze reeds weet waar de valkuilen en solide blokken zitten, kan deze stap voor stap nagaan of de speler een code heeft gelegd die lukt. 
+Hij doet dit door actie voor actie uit te zoeken waar de speler staat, en of deze positie een gevolg heeft. Elke stap zal opgeslagen worden in een nieuwe Array (opeenvolging van acties).
+
+####Stap 4
+Hierna (onafhankelijk van het resultaat van voorafgaande functie) zal de laatstgenoemde array uitgevoerd worden. Dit gebeurd traag, en stap voor stap, zodat de gebruiker kan volgen via de kaarten die hij reeds heft neergelegd. Op deze manier kan de gebruiker ook terugvinden waar hij een fout heeft gemaakt. Terwijl deze acties worden uitgevoerd, wordt de kaart die overeenkomt met de actie aangeduid via de projectie. 
+
+###De tag recognitionTags zijn snel herkenbare afbeeldingen die eruit zien als een vereenvoudiging van een QR code. Ze worden algemeen gebruikt om informatie door te geven aan het programma. Onder andere het overgaan naar een codemoment, maar eveneens de positie van blokken code worden via deze tags geregeld. Deze tags hebben een cruciale rol in het geheel.  Daarom moest dit stukje software bijzonder efficiënt kunnen lopen, en de nodige ID’s als output hebben. Ik ging natuurlijk eerst op zoek naar een soortgelijke plugin, die me verder zou helpen. De gevonden systemen waren helaas slechts in staat met eigen tags te werken. het aanpassen om bijvoorbeeld enkel bepaalde kleuren te tracks, het beeld negatief te maken, of de positie in een bepaalde vorm weer te geven zou teveel tijd hebben genomen. Verder was het ook een bijzonder zware plugin, omdat deze heel het cameraveld analyseert. Ik besloot zelf een eigen plugin te schrijven dit dit waar kon maken.####Versie eenEerlijk is eerlijk, mijn eerste versie liep zo mogelijk nog minder efficient dan de eerder vermeldde plugin. Ik maakte gebruik van een systeem dat de volgende stappen onderneemt:
+1. de vorige positie als centrum voor de huidige scan2. 360 graden rond deze positie op verscheidene afstanden de kleur bepalen3. indien het punt donker genoeg was, werd dit opgeslagen in een lijst.4. De lijst wordt overlopen om het verste punt te bepalen.5. tussen deze vier punten werd dan geïtereerd om de desbetreffende code te bepalen.6. de rotatie werd opgeslagen in een object.
+Natuurlijk namen al deze stappen bijzonder veel tijd in beslag. Ik moest dus op zoek naar een efficiëntere versie die dezelfde output kon geven.
+####Versie twee
+Het probleem met deze eerste versie is dat deze het gehel oppervlak moet afzoeken naar een tag. Dit kon efficiënter. Ik besloot het probleem op te lossen door gebruik te maken van bepaade scanvelden. Dit zijn kleine velden die geprojecteerd worden waarin een kaart gescanned kan worden. Het programma moest in plaats van 1400\*900 dus nog maar 200\*200  
+####Finale versieOmdat ik toch al werkte met een beperkt oppervlak, leek het me onnodig vanuit het midden te beginnen scannen. Bij gevolg verliep de scan nu in een veel efficiëntere vorm.Elk quadrant wordt apart behandeld. Er werd van buitenaf naar binnen gescanned, tot er een eerste donkere punt werd gedetecteerd. op dit moment wordt dit opgeslagen als verste hoek, en werd dit quadrant verder genegeerd. Deze actie alleen haalde de nodige processor kracht al met een 20tal percent naar beneden. Verder wordt slechts een scan uitgevoerd als de camera detecteerde dat de kleur van het veld drastisch veranderd was.  
 
 ##conclusions and further work
