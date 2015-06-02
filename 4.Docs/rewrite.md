@@ -62,7 +62,7 @@ Naarmate het onderzoek vorderde, kwamen een aantal andere onderzoeksvragen aan b
  * welke software en hulpmiddelen zijn reeds beschikbaar
  * hoe kan een kind gemotiveerd worden een doel te bereiken
 
-
+Sommige van deze vragen werden echter nooit beantwoord, omdat de applicatie of het verhaal hen overbodig maakten. Zo werd leren in klasverband overbodig omdat de omgeving variabel werd. Het huidige programma zorgt er namelijk voor dat men met simpele tools thuis of in een coderdojo omgeving aan de slag kan gaan (een coderdojo is een evenement waar kinderen leren programmeren, met behulp van programma's zoals Scratch).
 
 ###onderzoeksresultaat
 Het vooropgestelde resultaat zal een verhaal bevatten, dat op bepaalde momenten het kind zal aanzetten een stukje te programmeren alvorens verder te gaan met het verhaal. Dit proces wordt ondersteund met een gerpojecteerde interface met de nodige tips. Het aantal stukjes code dat hiervoor gebruikt kunnen worden zal in dit onderzoek beperkt worden. Het programma zal gebruik maken van empathie via narratieve elementen en andere technieken om het kind te motiveren.
@@ -219,7 +219,7 @@ Ondanks het mogelijk maken van het invoeren van verhalen door anderen, was het a
 ###programmastructuur
 
 ####algemene structuur
-Het programma werkt via een aantal fasen. Deze laten toe dat er toevoegingen kunnen gebeuren zonder te moeten zoeken in een ingewikkelde structuur van als-dan loops. Om de code duidelijk en gestructureerd te houden wordt er natuurlijk ook gewerkt met klassen. Niet alle klassen zullen in dit document uitgebreid besproken worden.
+Het programma werkt via een aantal fasen. Deze laten toe dat er toevoegingen kunnen gebeuren zonder te moeten zoeken in een ingewikkelde structuur van als-dan loops. Om de code duidelijk en gestructureerd te houden wordt er natuurlijk ook gewerkt met klassen. Niet alle klassen zullen in dit document uitgebreid besproken worden. Verder is de vooruitgang van de code ook deels uitgeschreven in de blog [http://www.crashlab.be/blog]. 
 
 
 ####De interfaceklasse
@@ -238,6 +238,9 @@ De speler heeft zijn kaarten gelegd, en heeft een groene kaart in de desbetreffe
 Nadat alle speciale acties zijn omgezet in een lange serie afzonderlijke acties, zal deze klasse uitzoeken of de uitvoer mogelijk is. Omdat deze reeds weet waar de valkuilen en solide blokken zitten, kan deze stap voor stap nagaan of de speler een code heeft gelegd die lukt. Hij doet dit door actie voor actie uit te zoeken waar de speler staat, en of deze positie een gevolg heeft. Elke stap zal opgeslagen worden in een nieuwe Array (opeenvolging van acties).
 #####Stap 4
 Hierna (onafhankelijk van het resultaat van voorafgaande functie) zal de laatstgenoemde array uitgevoerd worden. Dit gebeurt traag, en stap voor stap, zodat de gebruiker kan volgen via de kaarten die hij reeds heeft neergelegd. Op deze manier kan de gebruiker ook terugvinden waar hij een fout heeft gemaakt. Terwijl deze acties worden uitgevoerd, wordt de kaart die overeenkomt met de actie aangeduid via de projectie.
+
+#####process
+Het maken van het compile-systeem vergde veel tijd en inspanning. Dit proces is namelijk zeer abstract. In eerste instantie dacht ik aan een vastgelegd systeem, waar maar één oplossing mogelijk was. Omdat dit zeer beperkend is, werd dit idee al snel van de baan geveegd. Tijdens Resonate (multimedia conferentie) bedacht ik het systeem dat nu nog steeds gebruikt wordt. 
 
 ####De tag recognition
 Tags zijn snel herkenbare afbeeldingen die eruit zien als een vereenvoudiging van een QR code. Ze worden algemeen gebruikt om informatie door te geven aan het programma. Onder andere het overgaan naar een codemoment, maar eveneens de positie van blokken code worden via deze tags geregeld.
@@ -259,7 +262,27 @@ Het probleem met deze eerste versie is dat deze het gehele oppervlak moet afzoek
 #####Finale versie
 Omdat ik toch al werkte met een beperkt oppervlak, leek het me onnodig vanuit het midden te beginnen scannen. Bij gevolg verliep de scan nu in een veel efficiëntere vorm. Elk quadrant wordt apart behandeld. Er werd van buitenaf naar binnen gescand, tot er een eerste donkere punt werd gedetecteerd. op dit moment wordt dit opgeslagen als verste hoek, en werd dit quadrant verder genegeerd. Deze actie alleen haalde de nodige processor kracht al met een twintigtal percent naar beneden. Verder wordt slechts een scan uitgevoerd als de camera detecteerde dat de kleur van het veld drastisch veranderd was. 
 
+###Hardware en vorm
 
+####tafel
+Het aantal kinderen dat tegelijk kon deelnemen heeft sterk gevariëerd. Aan de start van het project was er sprake van een hele klas, of minstens 10 kinderen. Dit veranderde echter naar een twee-tal kinderen. Dit was efficienter en stelde me in staat te focussen op belangrijkere functionaliteiten zoals tags en compileer-mogelijkheden. 
+
+####tags
+De allereerste tags waren blokjes plexiglass, uitgesneden met de lasercutter. Om deze blokjes bijeen te houden om het scannen gemakkelijk en accuraat te houden waren magneetjes nodig. 
+Later zou een uitsparing gemaakt worden in het onderliggend projecteeroppervlakte, waardoor de magneet overbodig werd. Dit zou helaas de flexibiliteit van het aantal tags beperken.
+
+Tijdens Resonate (een conferentie rond multimedia en installaties) in Belgrado, heb ik het privilege gehad een gesprek te kunnen hebben met Zach Liebermann (grondlegger Openframeworks). Deze raadde me aan in plaats van blokjes over te schakelen naar een kaartspel. Dit heeft een aantal gevolgen:
+
+1. de code's die op het kaartje moeten komen kunnen groter gemaakt worden.
+2. de ruimte rond de tag wordt wit, waardoor dit vlotter uit te lezen valt.
+3. naargelang de stijl van illustraties kan dit kaartje ook aangepast worden aan de gangbare stijl.
+4. het gehele project wordt een stuk gemakkelijker zelf te maken. Mensen met kennis van programmeren kunnen deze tool gebruiken om hun of andere kinderen gemakkelijk en zonder extra middelen te leren programmeren.
+5. (indien tijd over) er kan misschien gewerkt worden met een soort pixelated vorm van illustreren. zolang de hoeken aangeduid zijn, kan dit ook nog steeds uitgelezen worden. dit moet natuurlijk appart definieerbaar zijn.
+
+
+
+####projecteer oppervlak
+Aan de start van dit project had elk kind een eigen projectiebord. Dit zorgde ervoor dat kinderen zich konden verplaatsen zonder problemen. Dit was een bord ter grootte van een A3 papier. Aan de rechterkant was een uitsaring voor de toenmalig plexiglazen tags. Dit bord bleek echter niet geschikt (veel processorkracht nodig om het beeld te vervormen). Helaas was het moeilijk een statisch en stabiel beeld te genereren op basis van de positie van het projectieoppervlak. De overgang van een plank naar een boek gebeurde tijdens een bespreking met mijnheer Van den Broeck. Die wees mij buiten de functionele waarde op het gemak van lezen in een fysiek boek. Het boek zou groot genoeg moeten zijn om het speelveld (die de programmeeropdracht bevatte) te kunnen herbergen. Tijdens een vergadering met Beyond.io werd onder mijn aandacht gebracht dat dit niet het geval moest zijn. Het zou jammer geweest zijn om niet de volledige projectie te gebruiken en me te beperken tot een klein deel van een pagina. Dit had tevens ook de beeldkwaliteit aangetast. Ik besloot uiteindelijk het volledige speelveld weg te nemen uit het boek, en te werken met een afzonderlijk werkveld dat aangeroepen kan worden door het scannen van een code in het boek. 
 
 
 ##conclusions and further work
@@ -272,21 +295,17 @@ In de toekomst kunnen vele verhalen samenwerken met dit programma, en kan het ge
 ------
 
 
-
-
 #todo
 
-* process
 * user experience -> verloopv an de applicatie
-* motorische beperkingen
 * taligheid en geluid
 * onbeantwoorde deelvragen toelichten
 * variabelheid bespreken
 * aanleren van programmeren
-* toch eigen verhaal geschreven --> verwijzen
 * bij code -> blog verwijzen
    * chronologische verhaal
    * uitgeschreven code wordt toegelicht tijdens presentatie
+ 
 * headerteksten
  
 b208
