@@ -6,79 +6,88 @@
 
 
 #voorwoord
-* de richting leerde me
-* dankwoord
+
+Drie jaar lang studeerde ik Art and Technology aan de Erasmus Hogeschool Brussel. De opleiding zorgde ervoor dat mijn opgedane kennis uit het secundair (Multimedia) werd uitgebreid, en leerde me deze kennis om te zetten in praktische en gebruiksvriendelijke installaties en applicaties. 
+
+Ik draag dit werk (en voorafgaande jaren) op aan mijn ouders, die me hielpen en bijstonden waar ze konden.
+Verder richt ik dit dankwoord aan mijn mentor (zowel in de opleiding als daarbuiten) Wouter Van den Broeck.  Ook de leden van Beyond.io bedankt ik graag voor hun praktische bijstand en goede input. 
+
 
 #inleiding
-De inspiratie voor dit onderzoek komt oorspronkelijk van één van de installaties op het Brusselse evenement "Nuit Blanche" (referentie en toelichten). Eén van de docenten liet een video zien waarin een connectie werd gemaakt tussen fysieke componenten en een projectie. In het gesprek dat volgde werd hier een educatief doel aan gekoppeld. Fysieke componenten, een systeem om zogenaamde tags uit te lezen en te volgen, en een narratief. Het project werd ontwikkeld om kinderen zin geven in programmeren en hen de eerste beginselen ervan bijbrengen.
+De inspiratie voor dit onderzoek komt oorspronkelijk van één van de installaties op het Brusselse evenement "Nuit Blanche" (een kunstenfestival in Brussel http://nuitblanchebrussels.be/nl/). Eén van de docenten liet een video zien waarin een connectie werd gemaakt tussen fysieke componenten en een projectie. In het gesprek dat volgde werd hier een educatief doel aan gekoppeld. We spraken over fysieke componenten en een narratief dat het geheel kon ondersteunen. Het project werd ontwikkeld om kinderen zin geven in programmeren en hen de eerste beginselen en denkwijzen ervan bijbrengen.
 
-Kinderen krijgen in dit project een verhaal aangeboden, in de vorm van een boek. Bepaalde pagina’s zijn leeggelaten. Op deze pagina is het de bedoeling dat het kind een stukje code legt om het hoofdpersonage verder te helpen, en zo het verhaal te laten verdergaan.
-Doorheen de maanden is dit project sterk geëvolueerd. Zo heeft vooral het projectieoppervlak vele vormen gekend, van een tafeloppervlak naar een fysiek boek. Ook zijn de codeblocks (kleine componenten die de kinderen moeten inzetten om een doel te bereiken) van een plexiglazen blokje naar een speelkaartformaat gegaan.
-Ik kreeg bij dit project hulp van een aantal personen, Waaronder mijn ouders, Wouter Van Den Broeck, Pieter Feys, Zach Lieberman, en Beyond.io.
+Kinderen krijgen in dit project een verhaal aangeboden, in de vorm van een boek. Bepaalde pagina's zetten kinderen aan tot interactie. Dit gebeurd door het leggen van kaarten, die elk een klein stukje code symboliseren.
+
+Doorheen de maanden is dit project sterk geëvolueerd. Zo heeft vooral het projectieoppervlak vele vormen gekend, van een tafeloppervlak naar een fysiek boek. Ook de code elementen die een stukje code symboliseren, zijn doorheen de afgelopen maanden vaak van vorm en functionaliteit veranderd.
 
 in dit project ontwikkelde ik een applicatie om jonge kinderen de eerste inzichten in verband met programmeren bij te brengen. dit gebeurd op basis van [metaforische code] die de kinderen in de juiste volgorde leggen om een vooropgesteld doel te bereiken. Ik gebruik hierbij een verhaal waarmee ik de motivbatie wil verhogen door gebruik te maken van een empathisch element.
 
 
-In dit verslag beschrijf ik eerst de onderzoeksvraag. Daarna ga ik dieper in op Programmeren en de wijze waarop dit zich verhoudt tot achterliggende denkvaardigheden. In het derde deel bespreek ik de rol van een narratief in dit onderzoek. Het laatste deel beschrijft de opbouw van de applicatie en diens achterliggende code. 
+Ik zocht voor dit project hulp bij externen, zoals Zach Lieberman (grondlegger van Openframeworks, en open source c++ platform), Pieter Feys (student pedagogie aan Universiteit Gent, met een grondige kennis in interactieve verhalen), en Het Geluidshuis (productiehuis van hoorspelen).
+
+
+Dit verslag begint met een uitgebreide projectomschrijving. Daarna ga ik dieper in op programmeren en de wijze waarop dit zich verhoudt tot achterliggende denkvaardigheden. In het derde deel bespreek ik de rol van een narratief in dit onderzoek. Het laatste deel beschrijft de opbouw van de applicatie en diens achterliggende code. 
 
 #de onderzoeksvraag
+
 ###probleemschets
-Er zijn reeds een aantal applicaties met het doel kinderen te leren programmeren. Dit gebeurt vaak in de vorm van een spel of kleine opdrachten. Deze applicaties missen helaas vaak een doel, soms komt het kind tot het ontwikkelen van een klein spel, maar dit blijft motivationeel beperkt.Een narratief kan ervoor zorgen dat kinderen langer gemotiveerd zijn, en minder snel afhaken omdat opdrachten op elkaar beginnen lijken. In deze applicaties worden verschillende programmeer onderdelen ook duidelijk één voor één aangeboden, in plaats van dit op een minder opvallende manier te doen (ik begrijp niet goed wat je bedoelt, moet het opvallen of juist niet en spreek je nu over jouw applicatie of over de andere?). Elke opdracht is ook verschillend van de vorige. Het kind doorloopt dus een aantal opdrachten, en weet na de laatste opdracht elk onderdeel correct te gebruiken. Het doel van het narratief is deze onderdelen aan elkaar te binden, zodat het geheel een grote opdracht wordt, zonder het kind "opdrachten" op te leggen.
+Er zijn reeds een aantal applicaties die als doel hebben het doel kinderen te leren programmeren. Dit gebeurt vaak in de vorm van een spel of kleine opdrachten. Deze applicaties missen vaak een doel, maar dit blijft motivationeel beperkt. Een narratief kan ervoor zorgen dat kinderen langer gemotiveerd zijn, en minder snel afhaken omdat opdrachten op elkaar beginnen lijken. Elke nieuwe opdracht in dit project is ook verschillend van de vorige. Het kind doorloopt dus een aantal opdrachten, en weet na de laatste opdracht elk onderdeel correct te gebruiken. Het doel van het narratief is deze onderdelen aan elkaar te binden, zodat de opdrachten minder als oefeningen of taken aanvoelen.
 
 ###Doelgroep
 De doelgroep van dit project ligt vooral tussen 8 en 12. Dit is een leeftijdsklasse waarin lezen vaak niet veel moeite meer vraagt, en de focus dus kan liggen op het schrijven van de code.
 
 ###Doel van het onderzoek
-Het onderzoek dient duidelijk te maken of een narratief effectief kan bijdragen aan een leukere leerervaring. <b>Dit</b> via een hands-on ervaring, en een empathische band met het hoofdpersonage van het verhaal. Het resultaat van dit onderzoek zal ook een POC (proof of concept) bevatten in de vorm van een applicatie die een extra dimensie geeft aan een verhaal, en het toestaat meerdere verhalen met dezelfde applicatie te kunnen gebruiken.
+Het onderzoek dient duidelijk te maken of een narratief effectief kan bijdragen aan een leukere leerervaring. Die leukere ervaring kan bereikt worden door een hands-on ervaring, en een empathische band met het hoofdpersonage van het verhaal. Het resultaat van dit onderzoek omvat ook een proof of concept in de vorm van een applicatie die een extra dimensie geeft aan een verhaal, en het toestaat meerdere verhalen met hetzelfde programma te kunnen gebruiken.
 
 ###onderzoeksvragen
 ####centrale vraag
-Hoe kunnen we kinderen aanzetten tot coderen in een narratieve omgeving, en aan welke voorwaarden moet de digitale omgeving voloen om succesvol te zijn.
-succesvol betekend in deze context het motiveren van de leerlingen, en het aanbieden van een specifiek doel waarnaar gestreefd kan worden. 
+Hoe kunnen we kinderen aanzetten tot coderen in een narratieve omgeving, en aan welke voorwaarden moet de digitale omgeving voloen om succesvol te zijn. Succesvol betekend in deze context het motiveren van de leerlingen, en het aanbieden van een specifiek doel waarnaar gestreefd kan worden. 
+
 ####deelvragen
-De onderzoeksvragen laten zich indelen in een aantal categorieën. De eerste categorie bevat vooral vragen omtrent het leerproces van het kind, en welke elementen bij kunnen dragen aan een betere, leukere leerervaring. Het gaat hier dan vooral over de volgende vragen:
+De onderzoeksvragen laten zich indelen in een aantal categorieën. De eerste categorie bestaat vooral uit vragen omtrent het leerproces van het kind. Verder wordt ook vermeldt welke elementen bij kunnen dragen aan een betere, leukere leerervaring. Het gaat hier dan vooral over de volgende vragen:
 
  * heeft handelend leren een positieve invloed, en hoe kan dit geïntegreerd worden in dit project
  * heeft empathie effect op leren en hoe werkt dat dan
- * leren in klasverband; welke randvoorwaarden hangen hieraan vast om effectief te zijn
+ * leren in klasverband; welke randvoorwaarden moeten voldaan zijn om efficiënt te kunnen leren
  
 Verder wordt het aanleren van programmeren aan kinderen in vraag gesteld.
+
  * waarom zou je kinderen leren programmeren
  * welke invloed heeft programmeren op kinderen
  * hoe kan dit technisch gerealiseerd worden
  
 Welke eerste basiselementen van programmeren kunnen bij jonge kinderen aangeleerd worden
-Naarmate het onderzoek vorderde, kwamen een aantal andere onderzoeksvragen aan bod. Deze gaan vooral over de functionaliteit van het programma, maar eveneens over de interactie die het programma aanbiedt tegenover de gebruiker
+Naarmate het onderzoek vorderde, kwamen een aantal andere onderzoeksvragen aan bod. Deze gaan vooral over de functionaliteit van het programma, maar eveneens over de interactie die het programma aanbied aan de gebruiker
 
  * welke software en hulpmiddelen zijn reeds beschikbaar
+ * hoe kan een kind gemotiveerd worden een doel te bereiken
 
 
 
 ###onderzoeksresultaat
-Het vooropgestelde resultaat zal een verhaal bevatten, dat op bepaalde momenten het kind zal vragen een stukje te programmeren alvorens verder te gaan met het verhaal. Dit proces wordt ondersteund met een projectie en de nodige tips. Het aantal stukjes code dat hiervoor gebruikt kunnen worden zal in dit onderzoek beperkt worden. Het programma zal gebruik maken van empathie via narratieve elementen en andere technieken om het kind te motiveren.
+Het vooropgestelde resultaat zal een verhaal bevatten, dat op bepaalde momenten het kind zal aanzetten een stukje te programmeren alvorens verder te gaan met het verhaal. Dit proces wordt ondersteund met een gerpojecteerde interface met de nodige tips. Het aantal stukjes code dat hiervoor gebruikt kunnen worden zal in dit onderzoek beperkt worden. Het programma zal gebruik maken van empathie via narratieve elementen en andere technieken om het kind te motiveren.
 #onderzoek
-Ook hier een inleiding schrijven over wat je hier behandelt en in welke volgorde
-soort headertekst?
 
 
 ##Waarom leren programmeren op jonge leeftijd?
-In 2014 gaf de EU (www.eun.org) een rapport uit onder de titel 'computing our future' dat het integreren van programmeren in het lager onderwijs bespreekt. Het gaat hier vooral over landen die dit reeds doen (zoals Estland) maar eveneens over landen die dit van plan zijn in de nabije toekomst (waaronder België). Ook het nut van programmeren in een schoolomgeving wordt besproken met het oog op de toekomst van zowel de economie (meer programmeurs), maar belangrijker nog, met het oog op de ontwikkeling van het kind. [Ik zou hier enkele zinnen uit het rapport overnemen, vb van p 10 wat ze willen aangeleerd zien. Je mag gewoon citeren, mits je de pagina vermeldt]
+In 2014 gaf de EU (www.eun.org) een rapport uit onder de titel 'computing our future' dat het integreren van programmeren in het lager onderwijs bespreekt. Het gaat hier vooral over landen die dit reeds doen (zoals Estland) maar eveneens over landen die dit van plan zijn in de nabije toekomst (waaronder België). Ook het nut van programmeren in een schoolomgeving wordt besproken met het oog op de toekomst van zowel de economie (meer programmeurs), maar belangrijker nog, met het oog op de ontwikkeling van het kind.
 
-Mitch Resnick (MIT, medeoprichter van Scratch) vergelijkt programmeren met schrijven; slechts weinig van de kinderen worden professioneel schrijver, maar kunnen schrijven is steeds handig. Hij vindt dat dit ook geldt voor code. Men moet niets computergerelateerd kiezen als beroep om de opgedane kennis te gebruiken. Programmeren stimuleert volgens Mitch het creatief denken, het systematisch redeneren en het samenwerken in teamverband. Verder kan het kind ideeën naar buiten brengen op deze manier. (Referentie)
+Mitch Resnick (MIT, medeoprichter van Scratch) vergelijkt programmeren met schrijven; slechts weinig van de kinderen worden professioneel schrijver, maar kunnen schrijven is steeds handig. Hij vindt dat dit ook geldt voor programmeren. Programmeren stimuleert volgens Mitch het creatief denken, het systematisch redeneren en het samenwerken in teamverband. Verder kan het kind deze kennis gebruiken om zijn creativiteit te uiten (Mitch geeft hier het voorbeeld van kinderen die moederdagkaarten programmeerden).
 
-Dit inzicht komt terug bij Derek Cabrera. Hij beschrijft in zijn TED-talk (referentie, vermeld het webadres) dat sommige kinderen het creatief denken verleerd hebben. Hij geeft hierbij het voorbeeld van Lego. Dit werd vroeger verkocht in dozen, zonder instructiehandleiding, terwijl deze momenteel vooral verkocht wordt in dozen waarmee men enkel de handleiding kan volgen, doordat de blokjes slechts één enkel model toelaten. volgens hem verleren kinderen hierdoor het creatief denkproces.
+Dit inzicht komt terug bij Derek Cabrera. Hij beschrijft in zijn TED-talk dat sommige kinderen het creatief denken verleerd hebben. Hij geeft hierbij het voorbeeld van Lego. Dit werd vroeger verkocht in dozen, zonder instructiehandleiding, terwijl deze momenteel vooral verkocht wordt in voorgemaakte elementen, waardoor men verplicht is de aanwijzingen te volgen. Dit omdat de blokjes slechts één enkel model toelaten. volgens hem verleren kinderen hierdoor het creatief denkproces.
 
-Tijdens dit onderzoek werd ik op het bestaan gewezen van 21st Century Skills, een organisatie die geregeld onderzoeken uitbrengt omtrent vernieuwing en integratie van deze skills in het onderwijs. 21st Century Skills stelt dat onze maatschappij van een industriële samenleving naar een kennis-samenleving veranderd is. Hun doel is het onderwijs aan te passen om beter aan te sluiten bij dat beeld van de 21ste eeuw. De Europese unie is hier reeds mee bezig, samen met bijvoorbeeld Unesco en een aantal Amerikaanse organisaties.  Deze discussie wordt helaas nog niet helemaal doorgetrokken naar het onderwijs. Deze skills zouden even belangrijk moeten zijn als wiskunde of Nederlands. Joke Voogt (bijzonder hoogleraar ICT & Curriculum aan de Faculteit der Maatschappij- en Gedragswetenschappen van de Universiteit van Amsterdam) is voorstander van een publiek debat die deze discussie opentrekt waarin ook ouders en studenten hun mening kunnen uiten.
+Tijdens dit onderzoek werd ik op het bestaan gewezen van 21st Century Skills, een organisatie die geregeld onderzoeken uitbrengt omtrent vernieuwing en integratie van deze skills in het onderwijs. 21st Century Skills stelt dat onze westerse maatschappij van een industriële samenleving naar een kennis-samenleving veranderd is. Hun doel is het onderwijs aan te passen om beter aan te sluiten bij dat beeld van de 21ste eeuw. De Europese unie is hier reeds mee bezig, samen met bijvoorbeeld Unesco en een aantal Amerikaanse organisaties.  Deze discussie wordt helaas nog niet helemaal doorgetrokken naar het onderwijs. Deze skills zouden even belangrijk moeten zijn als wiskunde of Nederlands. Joke Voogt (bijzonder hoogleraar ICT & Curriculum aan de Faculteit der Maatschappij- en Gedragswetenschappen van de Universiteit van Amsterdam) is voorstander van een publiek debat die deze discussie opentrekt waarin ook ouders en studenten hun mening kunnen uiten.
 
 
 ###digitale samenleving
-de digitalisering van de samenleving is enorm merkbaar in de tewerkstelling. Het aantal beroepen waarin productiewerk verricht wordt, daalt snel, en de beroepen waarin men creatief moet nadenken en probleemoplossend moet werken, zitten in de lift. In die laatste categorie is een degelijke IT-kennis interessant om praktische redenen:. Vooral voor communicatie, maar eveneens om de efficiëntie te verhogen. Daarom is het belangrijk dat we dit al van jongs af aan kunnen meegeven. Maar ook kan de logica van programmeren een oefenplaats zijn voor probleemoplossend denken.
+de digitalisering van de samenleving is vooral merkbaar in de tewerkstelling in het westen. Het aantal beroepen waarin productiewerk verricht wordt, daalt snel. De beroepen waarin men creatief moet nadenken en probleemoplossend moet werken, zitten in de lift. In die laatste categorie is een degelijke IT-kennis interessant om praktische redenen. Vooral voor communicatie, maar eveneens om de efficiëntie van het werk te verhogen. Daarom is het belangrijk dat we dit al van jongs af aan kunnen meegeven. Maar ook kan de logica van programmeren een oefenplaats zijn voor probleemoplossend denken.
 
 ###21st Century Skills
-De term 21st Century Skills heeft betrekking op een geheel van vaardigheden die nodig zijn te functioneren in de huidige samenleving. Deze samenleving wordt onderverdeeld in een aantal groepen, "digital natives" en "digital immigrants". ( bron?)
+De term 21st Century Skills (niet te verwarren met de vereniging die deze term uitbrengt) heeft betrekking op een geheel van vaardigheden die nodig zijn te functioneren in de huidige samenleving. Deze samenleving wordt onderverdeeld in een aantal groepen, "digital natives" en "digital immigrants". ( bron?)
 De digital natives zijn in dit onderzoek de belangrijkste doelgroep. Zij zijn mee opgegroeid met de technologie, en ontdekken nieuwe ontwikkelingen en toepassingen, volledig onbevangen. Deze groep heeft weinig tot geen moeilijkheden met het gebruiken van nieuwe technologie, en zijn hier snel mee weg.
 Tot de groep van "digital immigrants" behoren de volwassenen die de technologie hebben zien groeien. Sommigen zijn snel weg met vernieuwing, anderen twijfelen eerder alvorens deze te omarmen. Ook deze groep gebruikers leert omgaan met de nieuwere technologieën, maar hebben soms meer moeite deze vlot te integreren.
-Het grote verschil tussen deze twee groepen is het gemak waarmee men overschakelt. Dit is vooral merkbaar in de manier van interactie. Terwijl de immigrants vooral vasthouden aan mail en formelere communicatie (ook face-to-face), maakt de groep van digital natives gebruik van sociale media zoals whats-app en facebook, en schakelt zeer snel over wanneer een nieuwe vorm beschikbaar is (vb: snapchat).
+Het grote verschil tussen deze twee groepen is het gemak waarmee men overschakelt. Dit is vooral merkbaar in de manier van interactie. Terwijl de immigrants vooral vasthouden aan mail en formelere communicatie (ook face-to-face), maakt de groep van digital natives gebruik van sociale media zoals whats-app en facebook, en schakelt vlot over wanneer een nieuwe vorm beschikbaar is (vb: snapchat). Beiden halen voordeel uit hun manier, maar in dit onderzoek leg ik de focus op de groep van natives.
+
 21st Century Skills worden onderverdeeld in een aantal vaardigheden. Deze worden vaak ondersteund door een degelijk gebruik van ICT. We spreken hier bijvoorbeeld over vaardigheden zoals:
 
  * samenwerking
@@ -87,7 +96,7 @@ Het grote verschil tussen deze twee groepen is het gemak waarmee men overschakel
  * probleemoplossend denken en creativiteit
  * planmatig werken
  
-De nadruk in dit onderzoek zal liggen op het probleemoplossend denken en creativiteit. Dit omdat deze vaardigheid gestimuleerd wordt door programmeeractiviteiten en de denkwijze die hiermee gepaard gaat.
+De nadruk in dit onderzoek ligt op het probleemoplossend denken en creativiteit. Dit omdat deze vaardigheid gestimuleerd wordt door programmeeractiviteiten en de denkwijze die hiermee gepaard gaat.
 
 ##Aan welke voorwaarden voldoet een krachtige leeromgeving
 
@@ -96,16 +105,10 @@ Met een krachtige leeromgeving bedoelen we een leeromgeving die participatie, be
 Om de activiteit om kinderen te leren programmeren effectief te maken, moeten ze dus zelf kunnen handelen (participatie). In het project realiseren we een betekenisvolle context  via een narratief. Zelfsturing stimuleren we door de kinderen  zelf oplossingen voor het gestelde probleem te laten zoeken. Het narratief zelf zorgt voor een ontspannen staat waarin de leerling snel en efficient kan leren.
 
  Neurowetenschapper prof. C. Lafosse verwijst naar het belang van motorisch handelen in leersituaties. Via het manipuleren van concrete voorwerpen prikkelen we zenuwbanen die in onze hersenen verbindingen leggen waardoor we leren. (http://www.klasse.be/tvklasse/20627-Christophe-Lafosse-Het-GeTalenteerde-Brein#.VWoKSYZUeK0). In dit project koos ik dan ook niet voor aanklikken of toetsen op een scherm maar voor het concreet plaatsen van objecten in een gekozen volgorde. Dit werkt anders dan games of applicaties via het scherm.
+ 
+ Natuurlijk zijn er reeds een aantal applicaties in omloop die zich focussen op het aanleren van code aan kinderen. Deze beperken zich vaak tot één enkele soort opdrachten, waardoor deze applicaties vaak repetitief aanvoelen, ondanks de achterliggende mogelijkheden.
 
 ##Programmeren en diens onderverdelingen
-
-###executive functioning?
-
-###Algoritmisch denken
-Algoritmisch denken wordt door de EU omschreven als "de mogelijkheid een probleem op te lossen via een stap-voor-stap oplossing (algoritme), waarin deze bestaat uit een eindige set duidelijk gedefinieerde stappen". (Referentie!)
-Dit soort denken wordt vaak gebruikt tijdens het programmeren. Het komt erop neer dat de programmeur (in dit geval ook de gebruiker) een probleem dient te verdelen in een set kleinere deelproblemen, om daarna deze deelproblemen te kunnen oplossen via een stappenplan. Men moet hierbij natuurlijk ook rekening houden met de beginsituatie en het einddoel.
-Het aanleren van deze vaardigheid gebeurt reeds in bestaande programma's. Onder andere Scratch (referentie)leert dit aan door gebruik te maken van een serie uitdagingen die het kind moet doorlopen. Tijdens dit proces leert hij het probleem op te delen in kleine acties. Nadat de gebruiker alle stappen heeft doorlopen, kan deze aan de slag met alle blokjes die Scratch bevat, om zelf creaties te maken.
-Scratch kan een opstap zijn naar programma's als java, visual basic of javascript, zonder de leerling al direct te confronteren met het zoeken naar bugs als komma's of aanhalingstekens. Dit kan namelijk een grote drempel vormen, omdat een programmeur veel tijd doorbrengt een code te debuggen. Het werken met voorgemaakte blokjes neemt deze drempel weg.
 
 ###programmeren
 Men kan het natuurlijk niet hebben over programmeren zonder de meest pure vorm te bespreken. Programmeren kent vele definities. de volgende is diegene die de EU gebruikt in zijn rapport:referentie
@@ -113,9 +116,18 @@ Men kan het natuurlijk niet hebben over programmeren zonder de meest pure vorm t
 
 Dit soort programmeren heeft een stijle leercurve. Het duurt even vooraleer men een eigenlijke output heeft, en het aanleren van de syntax neemt de nodige tijd in beslag. Kinderen kunnen hierdoor gedemotiveerd geraken, en haken af als gevolg. Daarom wordt in dit project gebruik gemaakt van een abstractere vorm hiervan. Een vorm waarin de syntax niet zichtbaar is voor de gebruiker, en deze ook niet aan de nodige haakjes, komma's of punt-komma's moet denken.
 Programmeren laat zich onderverdelen in een aantal categorieën.
-algoritmisch denken herhaling Misschien eerst programmeren en dan algoritmisch denken?
 
-dit omvat het programmeren zonder effectief code te schrijven. Enkel standaard acties zijn hierin opgenomen. Variabelen en andere structuren komen hierin niet aan bod. Het oplossen van een probleem (meestal het bereiken van een bepaalde plek op het speelveld) kan hier opgelost worden door een opeenvolging van stappen zoals "stap naar rechts", "stap naar boven", en meer van dit soort blokken. Zoals eerder vermeld is deze vorm zeer geschikt voor jonge kinderen. Ze kunnen hier snel mee aan de slag en zien zeer snel resultaat. Dit is een ideale manier om snel en duidelijk een eerste probleem onder te verdelen in kleine stappen, en de drempel naar het volgende niveau is zeer laag. Voor ouderen is dit echter niet heel uitdagend, omdat de gelijkheid met het volgende level vaak te groot is en het als bandwerk aanvoelt.
+###Algoritmisch denken
+Algoritmisch denken wordt door de EU omschreven als "de mogelijkheid een probleem op te lossen via een stap-voor-stap oplossing (algoritme), waarin deze bestaat uit een eindige set duidelijk gedefinieerde stappen". (Referentie!)
+
+Dit soort denken wordt vaak gebruikt tijdens het programmeren. Het komt erop neer dat de programmeur (in dit geval ook de gebruiker) een probleem dient te verdelen in een set kleinere deelproblemen, om daarna deze deelproblemen te kunnen oplossen via een stappenplan. Men moet hierbij natuurlijk ook rekening houden met de beginsituatie en het einddoel.
+
+De bijhorende programmeervorm omvat het programmeren zonder effectief code te schrijven. Enkel basisacties zijn hierin opgenomen. Variabelen en andere structuren komen hierin niet aan bod. Het oplossen van een probleem (meestal het bereiken van een bepaalde plek op het speelveld) kan hier opgelost worden door een opeenvolging van stappen zoals "stap naar rechts", "stap naar boven", en meer van dit soort blokken. Zoals eerder vermeld is deze vorm zeer geschikt voor jonge kinderen. Ze kunnen hier snel mee aan de slag en zien zeer snel resultaat. Dit is een ideale manier om snel en duidelijk een eerste probleem onder te verdelen in kleine stappen, en de drempel naar het volgende niveau is zeer laag. Voor ouderen is dit echter niet heel uitdagend, omdat de gelijkheid met het volgende level vaak te groot is en het als bandwerk aanvoelt.
+
+Het aanleren van deze vaardigheid gebeurt reeds in bestaande programma's. Onder andere Scratch [https://scratch.mit.edu/] leert dit aan door gebruik te maken van een serie uitdagingen die het kind moet doorlopen. Tijdens dit proces leert hij het probleem op te delen in kleine acties. Nadat de gebruiker alle stappen heeft doorlopen, kan deze aan de slag met alle blokjes die Scratch bevat, om zelf creaties te maken.
+
+Scratch kan een opstap zijn naar programma's of programmeertalen als Java, Visual Basic of Javascript, zonder de leerling al direct te confronteren met de complexiteit van een volwaardige programmeertaal. Dit kan namelijk een grote drempel vormen, omdat een programmeur veel tijd doorbrengt een code te debuggen. Het werken met voorgemaakte blokjes neemt deze drempel weg.
+
 ####metaforisch programmeren
 In deze stap (niet noodzakelijk in deze volgorde) komen de eerste programmeer structuren naar boven. Kinderen en volwassenen maken kennis met een "for loop", en een "if else" structuur. Ook variabelen komen hier aan bod. De gemakkelijkste manier om deze vorm te gebruiken is door de code onder te verdelen in kant en klare blokjes. Deze kan de gebruiker dan aaneenschakelen en een groter geheel vormen. In veel applicaties kan deze vorm voorgesteld worden als een efficiënter alternatief voor algoritmisch denken.
 ####flow programming
@@ -136,7 +148,7 @@ Om volledig te kunnen begrijpen wat een narratief kan betekenen voor een gebruik
 
 ###Evolutie van verhalen
 
-We vertellen al verhalen sinds het begin van mensenheugenis, denk maar aan de rotstekeningen in Frankrijk. In die tijd werden verhalen vooral verteld, om geschiedenis door te geven, of fenomenen te verklaren. Met de komst van een geschreven taal zijn we deze verhalen ook beginnen neerschrijven. Het is echter pas sinds de uitvinding van de boekdrukkunst dat we deze in geschreven vorm ook beginnen verspreiden zijn. De tijd tussen deze eerste vooruitgangen spreidt zich echter over duizenden jaren. Pas met de komst van de film is het echt snel beginnen gaan. Na film kwam radio en tv, waarna computers en het internet het rijtje voegden om verhalen door te geven.
+We vertellen al verhalen sinds het begin van mensenheugenis. In het begin werden verhalen vooral verteld, om geschiedenis door te geven, of fenomenen te verklaren. Met de komst van een geschreven taal zijn we deze verhalen ook beginnen neerschrijven. Het is echter pas sinds de uitvinding van de boekdrukkunst dat we deze in geschreven vorm ook beginnen verspreiden zijn. De tijd tussen deze eerste evoluties spreidt zich echter over duizenden jaren. Pas met de komst van de film is het echt snel beginnen gaan. Na film kwam radio en tv, waarna computers en het internet het rijtje voegden om verhalen door te geven.
 Elk van deze uitvindingen bracht met zich mee dat artiesten een nieuwe manier hadden om verhalen te vertellen, maar ook hun verhalen aan te passen naar het gebruikte medium. Denk maar aan de uitvinding van de stop-motion truck in de filmwereld, waarmee het plots mogelijk werd verhalen anders vorm te geven, en andere verhalen te vertellen. Acties moesten niet meer mogelijk zijn, men kon truckeren.
 In 2005 kwam youtube uit. Dit is een van de grotere mijlpalen in het vertellen van verhalen. Het werd mogelijk voor iedereen met een camera (elk soort camera) eigen verhalen en films te verspreiden. Dit in combinatie met het goedkoper worden van de filmcamera en smartphones zorgt voor een enorme boost in het aantal en de kwaliteit van verspreide films, en dus ook verhalen.
 Nieuwe technologie gaat ook vaak gepaard met een nieuwe vorm van verhaalvertelling. Denk maar aan Vines, één van de recentere vormen hiervan. een online platform waarin de gebruiker een luttele 7 seconden kreeg om zijn punt, of verhaal, in duidelijk te maken.
@@ -173,15 +185,17 @@ Als we een verhaal aanhoren, zijn we zowel ontspannen als oplettend. Dit is een 
  (http://www.idealearninggroup.com/blog/the-role-of-stories-in-learning)
 
 
-##slot
+###slot
 
-Verhalen kunnen dus een zeer belangrijke rol spelen in het leren van nieuwe informatie en skills. Zowel het verhaal als de staat waarin deze ons brengt dragen bij aan beter en efficienter leren.
+Verhalen kunnen dus een zeer belangrijke rol spelen in het leren van nieuwe informatie en skills. Zowel het verhaal als de staat waarin deze ons brengt dragen bij aan beter en efficienter leren. Natuurlijk zijn verhalen ook gewoon ontspannend en maken het leren veel aangenamer.
+
+
 
 
 
 ##Narrative driven programming
 ###inleiding
-Op het mometn dat het theoretische luik onderzocht was, begon ik aan de uitwerking. Dit bracht de nodige extra vragen met zich mee. Ik begon met de zoektocht naar een verhaal, waarna de code de aandacht overnam. 
+Op het moment dat het theoretische luik onderzocht was, begon ik aan de uitwerking. Dit bracht de nodige extra vragen met zich mee. Ik begon met de zoektocht naar een verhaal, waarna de code de aandacht overnam. 
 
 ###Doel van het project
 
@@ -193,11 +207,14 @@ Het project is ontworpen om kinderen op een leukere manier kennis te laten maken
 
 Eerder werd al vermeld dat het verhaal dynamisch ingevoerd kan worden. Dit omdat een vast verhaal de mogelijkheden te hard beperkt. In mijn zoektocht naar een degelijk verhaal viel me op dat kinderen soms reeds in klasverband gebruik maakten van een mascotte. Denk maar aan "Jules" (http://www.dagjules.be/). Kinderen bouwen doorheen de lessenreeks een zekere empathie op met dit personage. 
 Het werken met een dynamisch verhaal laat toe dat dit personage ook gebruikt kan worden met de applicatie. De empathie is reeds opgebouwd, en de toepassing zal dus optimaal kunnen functioneren.
+
 ####Zoektocht naar een narratief
 In eerste instantie dacht ik het verhaal zelf te schrijven. dit om het zo volledig mogelijk te doen aansluiten bij de noden van het programma. Beyond.io raadde me aan het verhaal eerst te schrijven alvorens te beginnen programmeren.Dit om te voorkomen dat ik anders functionaliteiten zou ontwikkelen die achteraf onnodig zouden zijn.
 Omdat ik zelf niet de capaciteiten bezit een kinderverhaal te schrijven, deed ik beroep op andere schrijvers. Ik contacteerde onder andere Marc De Bel en Antony Horowitz. Marc De Bel antwoord positief, en stond toe dat ik een van zijn verhalen mocht gebruiken en zelfs aanpassen. Dit Leek echter geen goede optie, omdat zijn verhalen zowel te lang als te gevarieerd zijn om een degelijke programmeer oefening op te leveren. Verder kon hij mij ook niet helpen aan digitale versies van tekeningen, vaak gebruikt in zijn boek. Daarom contacteerde ik Het Geluidshuis.
 Het geluidshuis is een productiehuis dat vooral luisterverhalen (de zogenaamde hoorspelen) uitbrengt. Op het moment dat ik hen contacteerde zaten de kinderen volgens het concept nog aan een grote tafel. Het gebruiken van een hoorspel loste het kijkhoekproblem op. Dit wil zeggen dat de beeldende voorstelling van het verhaal niet naar een bepaalde richting kon wijzen, omdat kinderen errond zaten. Het luisteren lostte dit probleem op.
 Ik maakte met het geluidshuis en afspraak op 22 januari, in de voormiddag. Na een korte wachttijd kon ik met hen de volledige situatie bespreken. Al snel werd het duidelijk dat het moeilijk zou worden auteursrechtelijke toegang te krijgen tot de werken. Een nieuw werk maken ging zeker ook niet lukken, daarvoor waren de productiekosten veel te hoog. Er werd me wel hulp beloofd moest ik zelf een verhaal opzetten. Ik kon rekenen op intellectuele bijstand, maar infrastructuur was te duur om te mogen gebruiken.Werken met een hoorspel bracht helaas ook nieuwe problemen met zich mee. Onder andere dat de verhalen lang waren, en kinderen op elkaar zouden moeten wachten alvorens verder te gaan met het verhaal. Daarom besloot ik niet verder te werken met het geluidshuis.in plaats daarvan zou ik lesgevers, schrijvers en derden de mogelijkheid geven zelf een eigen verhaal in te voeren. Dit zou via een wegomgeving mogelijk zijn. De levels zouden ingevoerd kunnen worden via een webplatform, en zijn downloadbaar door het systeem.  
+####testverhaal
+Ondanks het mogelijk maken van het invoeren van verhalen door anderen, was het antuurlijk nog steeds nodig een verhaal te schrijven om alle functionaliteiten uit te testen. In het verhaal beleefd Fitz (een robothersteller in de toekomst) een kort avontuur met zijn robotje QU. In dit verhaal moeten de kinderen kleine algoritmes doorgeven aan QU om Fitz te helpen in zijn avontuur. Om dit verhaal ten volle te kunnen testen was het ook nodig de nodige illustraties te maken. Fitz zelf nam niet veel tijd in beslag.
 
 ###programmastructuur
 
@@ -240,10 +257,12 @@ Natuurlijk namen al deze stappen bijzonder veel tijd in beslag. Ik moest dus op 
 #####Versie twee
 Het probleem met deze eerste versie is dat deze het gehele oppervlak moet afzoeken naar een tag. Dit kon efficiënter. Ik besloot het probleem op te lossen door gebruik te maken van bepaalde scanvelden. Dit zijn kleine velden die geprojecteerd worden waarin een kaart gescand kan worden. Het programma moest in plaats van 1400\*900 dus nog maar 200\*200
 #####Finale versie
-Omdat ik toch al werkte met een beperkt oppervlak, leek het me onnodig vanuit het midden te beginnen scannen. Bij gevolg verliep de scan nu in een veel efficiëntere vorm. Elk quadrant wordt apart behandeld. Er werd van buitenaf naar binnen gescand, tot er een eerste donkere punt werd gedetecteerd. op dit moment wordt dit opgeslagen als verste hoek, en werd dit quadrant verder genegeerd. Deze actie alleen haalde de nodige processor kracht al met een 20tal percent naar beneden. Verder wordt slechts een scan uitgevoerd als de camera detecteerde dat de kleur van het veld drastisch veranderd was. 
+Omdat ik toch al werkte met een beperkt oppervlak, leek het me onnodig vanuit het midden te beginnen scannen. Bij gevolg verliep de scan nu in een veel efficiëntere vorm. Elk quadrant wordt apart behandeld. Er werd van buitenaf naar binnen gescand, tot er een eerste donkere punt werd gedetecteerd. op dit moment wordt dit opgeslagen als verste hoek, en werd dit quadrant verder genegeerd. Deze actie alleen haalde de nodige processor kracht al met een twintigtal percent naar beneden. Verder wordt slechts een scan uitgevoerd als de camera detecteerde dat de kleur van het veld drastisch veranderd was. 
 
-##conclusions and further work
 
+
+
+##conclusions and further work
 Verhalen hebben altijd een grote rol gespeeld in het aanleren van nieuwe technieken. Een narratief zorgt ervoor dat de gebruiker of lezer sneller verbindingen maakt, en dus handelingen en technieken beter onthoud. Dit project gebruikt deze leervorm om programmeren aan te leren aan kinderen, en hen hierbij visueel te ondersteunen. De applicatie leert en helpt het kind programmeerstructuren te begrijpen en toe te passen, op een luchtige en ontspannen manier. 
 
 
@@ -257,7 +276,6 @@ In de toekomst kunnen vele verhalen samenwerken met dit programma, en kan het ge
 
 #todo
 
-* dankwoord
 * process
 * user experience -> verloopv an de applicatie
 * motorische beperkingen
@@ -265,15 +283,13 @@ In de toekomst kunnen vele verhalen samenwerken met dit programma, en kan het ge
 * onbeantwoorde deelvragen toelichten
 * variabelheid bespreken
 * aanleren van programmeren
+* toch eigen verhaal geschreven --> verwijzen
+* bij code -> blog verwijzen
+   * chronologische verhaal
+   * uitgeschreven code wordt toegelicht tijdens presentatie
+* headerteksten
+ 
 b208
-
-###De sleutel tot een goed verhaal (volgens andrew stanton)
-Het vertellen van een verhaal loopt gelijk aan het vertellen van een mop. Je weet op voorhand hoe het verhaal to stand zal komen, en hoe het zal aflopen. Alles moet leiden tot één uiteindelijk resultaat. Veelal is dit een doel van het hoofdpersonage. Soms is dit doel niet specifiek uitgesproken. Het kan dieper liggen dan waar het verhaal over gaat. Dit doel zorgt niet altijd voor de goede beslissing. De hoofdrol kan volledig de verkeerde richting uitgestuurd worden.
-We kijken verhalen om te voelen, meevoelen met de protagonist. Volgens Andrew Stanton willen we ook vooral onszelf in de schoenen van de protagonist kunnen plaatsen. Verhalen laten ons dus toe gelijkheden tussen onszelf en anderen (in een andere tijd of ruimte) te kunnen voelen, of meemaken.
-“there isn’t anyone you couldn’t learn to love, once you’ve heard their story”
-Andrew spreekt in zijn talk ook grotendeels over “a promise worth your time”. Een belofte die aan het begin van het verhaal gemaakt worden en waar naartoe geleefd kan worden. Een belofte die de lezer belooft dat zijn tijd waardig besteed zal worden. Een van de meest gebruikte zinnen om dit te doen is “er was eens”. Andrew beschrijft het belang van deze belofte als een steentje, in een katapult. het katapulteert de lezer/luisteraar door het verhaal, tot aan het einde.
-Lezers, luisteraars, of kijkers willen best werken voor hun verhaal. ze willen het alleen niet expliciet weten. Het voelt meer aan als een eigen werk als je zelf de gaten kan invullen, onbewust. Als voorbeeld kan Wall-E aangehaald worden. een film over een afvalrobot die achterblijft op een vervuilde planeet( pixar ). Wall-e kan niet praten, en dus moet het publiek zelf werken voor hun eten (uitspraak ).
-quotes
 
 “drama is anticipation mingled with uncertainty” 
 “technology is as ambiguous as the air we breath” godfrey Reggio 
