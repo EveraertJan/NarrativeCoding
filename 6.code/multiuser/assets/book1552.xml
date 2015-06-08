@@ -2,9 +2,15 @@
 <story>
 <codemoment>
 	<id>1</id>
-	<background>#</background>
+	<background>http://crashlab.be/storyblocks/get/background_1552_1.png</background>
 	<placement>#</placement>
 	<numCards>3</numCards>
+</codemoment>
+<codemoment>
+	<id>1600</id>
+	<background>#</background>
+	<placement>#</placement>
+	<numCards>5</numCards>
 </codemoment>
 <codemoment>
 	<id>1600</id>

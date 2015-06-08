@@ -38,7 +38,7 @@ void Cam::setup(){
     yrot = 0;
     zrot = 0;
     x = -120;
-    y = -120;
+    y = -92;
 }
 
 void Cam::update(){

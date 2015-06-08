@@ -2,10 +2,7 @@ dependencies: \
   /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/User.cpp \
   /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/User.h \
   /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/UI.h \
-  ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/app/AppNative.h \
-  ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/System.h \
-  /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/Track.h \
-  /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/Cam.h \
+  /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/CodeMoment.h \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/Utilities.h \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/boost/boost/lexical_cast.hpp \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/boost/boost/detail/lcast_precision.hpp \
@@ -136,8 +133,11 @@ dependencies: \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/boost/boost/math/special_functions/fpclassify.hpp \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/boost/boost/math/tools/real_cast.hpp \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/boost/boost/container/container_fwd.hpp \
-  ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/Capture.h \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/gl/Texture.h \
+  ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/app/AppNative.h \
+  ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/System.h \
+  /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/Track.h \
+  /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/Cam.h \
+  ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/Capture.h \
   /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/Story.h \
-  ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/Xml.h \
-  /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/CodeMoment.h
+  ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/Xml.h

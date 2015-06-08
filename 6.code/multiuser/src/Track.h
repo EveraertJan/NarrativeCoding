@@ -12,11 +12,11 @@ class Track{
 public:
     void setup();
     void update();
-    void draw();
+    void draw(Boolean showCam);
     int trackTag(ci::Area ar, Boolean negative);
     Boolean trackGreen(ci::Area ar);
     Boolean checkExistance(int tagId);
-    
+    void saveSurf();
     
     
     Cam cam;
@@ -24,6 +24,8 @@ public:
     Vec2i ur;
     Vec2i dl;
     Vec2i dr;
+    
+    ci::Surface c;
     
     std::vector<int> tags;
     

@@ -29,23 +29,23 @@ void Track::setup(){
 void Track::update(){
     cam.update();
 }
-void Track::draw(){
+void Track::draw(Boolean showCam){
     
     
     if(cam.started){
         cam.draw(ul,ur, dr, dl);
+        c = copyWindowSurface();
     }
     
-    gl::color(255, 255, 0);
-    ci::gl::drawSolidCircle(ul, 50);
-    ci::gl::drawSolidCircle(dr, 50);
-    ci::gl::drawSolidCircle(ur, 50);
-    ci::gl::drawSolidCircle(dl, 50);
+    
+    if(!showCam){
+        ci::gl::clear();
+    }
+    
 }
-
 int Track::trackTag(ci::Area ar, Boolean negative){
 
-    ci::Surface surf = ci::app::copyWindowSurface().clone(ar);
+    ci::Surface surf = c.clone(ar);
     int oX = surf.getBounds().getX1();
     int oY = surf.getBounds().getY1();
     int bX = surf.getWidth()/2;
@@ -135,19 +135,16 @@ int Track::trackTag(ci::Area ar, Boolean negative){
         }
     }
     
-    //ci::gl::clear();
-    
-    ci::gl::drawStringCentered(ci::toString(total), ci::Vec2i(ci::app::getWindowCenter().x, 150));
+    ci::gl::drawStringCentered(ci::toString(total), ci::Vec2i(ar.x1+(ar.x2-ar.x1)/2, ar.y1-50));
     ci::Vec2i p = ((points.at(0)+points.at(1)+points.at(2)+points.at(3))/4);
     p.x+=int(ar.getCenter().x);
     p.y+=int(ar.getCenter().y);
     return total;
 }
 Boolean Track::trackGreen(ci::Area ar){
-    ci::ColorAT<unsigned char> c;
-    c = copyWindowSurface().areaAverage(ar);
-    gl::clear();
-    if(c.g-c.b>treshold && c.g-c.r>treshold){
+    ci::ColorAT<unsigned char> col;
+    col = c.areaAverage(ar);
+    if(col.g-col.b>treshold && col.g-col.r>treshold){
         return true;
     } else {
         return false;

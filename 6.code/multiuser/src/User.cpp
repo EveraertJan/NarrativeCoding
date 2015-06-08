@@ -19,6 +19,7 @@ void User::setup(int userX, int userY, int userW, int userH){
     track.setup();
     
     tagSize = 40;
+    showCam = false;
     
 }
 void User::update(){
@@ -39,7 +40,7 @@ void User::draw(){
         {case 0:
             //scan book
             ci::Area ar = ci::Area(userXCenter-tagSize, userYCenter-tagSize, userXCenter+tagSize, userYCenter+tagSize);
-            track.draw();
+            track.draw(showCam);
             ci::gl::color(255, 255, 255);
             ci::gl::drawStringCentered("show bookscan", ci::Vec2i(ci::app::getWindowCenter().x, 200));
             int tracked = track.trackTag(ar, true);
@@ -53,7 +54,7 @@ void User::draw(){
         {case 1:
             //reading
             ci::Area ar = ci::Area(userXCenter-tagSize, userYCenter-tagSize, userXCenter+tagSize, userYCenter+tagSize);
-            track.draw();
+            track.draw(showCam);
             int tagId = track.trackTag(ar, false);
             if(story.cmExists(tagId)){
                 state++;
@@ -62,9 +63,9 @@ void User::draw(){
             break;
         }
         {case 2:
-            //tutorial
+            //tutorial w/ greencard
             ci::Area ar = ci::Area(userXCenter-tagSize, userYCenter-tagSize, userXCenter+tagSize, userYCenter+tagSize);
-            track.draw();
+            track.draw(showCam);
             if(track.trackGreen(ar)){
                 state++;
             }
@@ -73,6 +74,20 @@ void User::draw(){
             break;
         }
         {case 3:
+            ci::Area ar = ci::Area(userXCenter-tagSize, userYCenter-tagSize, userXCenter+tagSize, userYCenter+tagSize);
+            track.draw(showCam);
+            std::vector<Area> scans = ui.scanArs;
+            for(int i = 0; i<scans.size(); i++){
+                if(i<scans.size()-1){
+                    track.trackTag(scans.at(i), false);
+                } else {
+                    if(track.trackGreen(scans.at(scans.size()-1))){
+                        state++;
+                    }
+                }
+            }
+            
+            ui.showCodeMoment(story.cm.at(0), ar);
             //Add cards
             break;
         }

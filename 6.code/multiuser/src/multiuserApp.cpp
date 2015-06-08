@@ -23,14 +23,14 @@ class multiuserApp : public AppNative {
 void multiuserApp::setup()
 {
     
-    setWindowSize(1920, 1080);
+    setWindowSize(960, 540);
     setFullScreen(TRUE);
     setWindowPos(0, 0);
     user.setup(getWindowCenter().x, getWindowCenter().y, getWindowWidth(), getWindowHeight());
     
     
     
-    mParams = params::InterfaceGl( "tracking", Vec2i( 200, 200 ) );
+    mParams = params::InterfaceGl( "tracking", Vec2i( 200, 300 ) );
     //mParams.addParam( "tag threshold", &user.track.tagThreshold, "min=0.0 max=255.0 step=2.0");
     
     mParams.addParam("xrot", &user.track.cam.xrot);
@@ -43,6 +43,7 @@ void multiuserApp::setup()
     mParams.addSeparator();
     mParams.addParam("state", &user.state);
     mParams.addParam("treshold greencard", &user.track.treshold);
+    mParams.addParam("show cam", &user.showCam);
 }
 
 void multiuserApp::mouseDown( MouseEvent event ){

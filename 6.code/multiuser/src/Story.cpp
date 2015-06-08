@@ -35,7 +35,7 @@ void Story::loadStory(int bookId){
                 cmpush.placementurl=tag->getValue();
                 console() << cmpush.placementurl << "\n";
             } else if(tag->getTag() == "numCards"){
-                cmpush.numcards=tag->getValue();
+                cmpush.numcards=tag->getValue<int>();
                 console() << cmpush.numcards << "\n";
             }
         }

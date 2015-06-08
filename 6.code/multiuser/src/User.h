@@ -34,4 +34,6 @@ public:
     int userWidth;
     int userHeight;
     int tagSize;
+    
+    Boolean showCam;
 };

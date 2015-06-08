@@ -13,6 +13,6 @@ public:
     int id;
     std::string backgroundurl;
     std::string placementurl;
-    std::string numcards;
+    int numcards;
     
 };
