@@ -27,16 +27,16 @@ void Story::loadStory(int bookId){
         for( XmlTree::Iter tag = codeMoment->begin(); tag != codeMoment->end(); ++tag ){
             if(tag->getTag() == "id"){
                 cmpush.id=tag->getValue<int>();
-                app::console()<< tag->getValue<int>() << "\n";
+                //app::console()<< tag->getValue<int>() << "\n";
             } else if(tag->getTag() == "background"){
                 cmpush.backgroundurl=tag->getValue();
-                console() << cmpush.backgroundurl << "\n";
+                //console() << cmpush.backgroundurl << "\n";
             } else if(tag->getTag() == "placement"){
                 cmpush.placementurl=tag->getValue();
-                console() << cmpush.placementurl << "\n";
+                //console() << cmpush.placementurl << "\n";
             } else if(tag->getTag() == "numCards"){
                 cmpush.numcards=tag->getValue<int>();
-                console() << cmpush.numcards << "\n";
+                //console() << cmpush.numcards << "\n";
             }
         }
         cm.push_back(cmpush);
@@ -45,7 +45,6 @@ void Story::loadStory(int bookId){
 
 Boolean Story::cmExists(int codeMID){
     int result = 0;
-    ci::app::console() << codeMID << "\n";
     for(int i = 0; i<cm.size(); i++){
         if(codeMID == cm.at(i).id){
             result++;

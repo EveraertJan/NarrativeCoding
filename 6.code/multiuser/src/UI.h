@@ -20,10 +20,14 @@ class UI{
     void showScanner(ci::Area ar);
     void showCodeMomentScanner(ci::Area ar);
     void showGreenScanner(ci::Area ar);
-    void showCodeMoment(CodeMoment cm, ci::Area ar);
-    
+    void showCodeMoment(CodeMoment cm, ci::Area ar, Vec2i pos);
+    void showOutput(CodeMoment cm, ci::Area ar, Vec2i pos);
+    void drawBlock(std::vector<Vec2i> blocks);
     Boolean settingsVis = true;
     
+    
+    Surface back;
+    Boolean imgSet;
     
     std::vector<Area> scanArs;
 };

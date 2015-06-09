@@ -32,13 +32,13 @@ void Cam::setup(){
         }
     }
     
-    width = 1927;
-    height = 1515;
+    width = 1907;
+    height = 1538;
     xrot = 0;
     yrot = 0;
     zrot = 0;
-    x = -120;
-    y = -92;
+    x = -132;
+    y = -47;
 }
 
 void Cam::update(){

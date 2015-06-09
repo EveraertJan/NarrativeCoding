@@ -10,6 +10,8 @@
 #include "cinder/System.h"
 #include "Track.h"
 #include "Story.h"
+#include "Compiler.h"
+#include "Timing.h"
 
 
 using namespace ci;
@@ -28,6 +30,8 @@ public:
     UI ui;
     Track track;
     Story story;
+    Compiler compiler;
+    Timing t;
     
     int userXCenter;
     int userYCenter;

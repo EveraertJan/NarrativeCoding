@@ -141,4 +141,7 @@ dependencies: \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/Capture.h \
   /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/Story.h \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/Xml.h \
+  /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/Compiler.h \
+  /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/Card.h \
+  /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/Timing.h \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/params/Params.h

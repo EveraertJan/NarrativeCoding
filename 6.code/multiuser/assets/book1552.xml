@@ -3,8 +3,8 @@
 <codemoment>
 	<id>1</id>
 	<background>http://crashlab.be/storyblocks/get/background_1552_1.png</background>
-	<placement>#</placement>
-	<numCards>3</numCards>
+	<placement>http://crashlab.be/storyblocks/get/structure_1552_1.png</placement>
+	<numCards>4</numCards>
 </codemoment>
 <codemoment>
 	<id>1600</id>

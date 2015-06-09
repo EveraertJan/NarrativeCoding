@@ -58,7 +58,7 @@ int Track::trackTag(ci::Area ar, Boolean negative){
     }
     ci::ColorAT<unsigned char> avg = surf.areaAverage(surf.getBounds());
     for(int i = 100; i>20; i--){
-        for(int st = 0; st<360; st+=2){
+        for(int st = 0; st<360; st+=1){
             ci::gl::color(0, 250, 0);
             int x = int(bX+(i*sin(ci::toRadians(float(st)))));
             int y = int(bY+(i*cos(ci::toRadians(float(st)))));
@@ -68,13 +68,16 @@ int Track::trackTag(ci::Area ar, Boolean negative){
                     ci::ColorAT<unsigned char> c = surf.getPixel(ci::Vec2i(x, y));
                     Boolean go;
                     if(negative){
-                        if(c.r>avg.r && c.b>avg.b && c.g>avg.g){
+                        ci::gl::color(255, 0,0);
+                        if(c.r-treshold>avg.r && c.b-treshold>avg.b && c.g-treshold>avg.g){
+                            ci::gl::drawSolidCircle(ci::Vec2i(ar.x1+x+oX, ar.y1+y+oY), 1);
                             go = true;
                         } else {
                             go = false;
                         }
                     } else {
-                        if(c.r<avg.r && c.b<avg.b && c.g<avg.g){
+                        if(c.r<avg.r-treshold && c.b<avg.b-treshold && c.g<avg.g-treshold){
+                            ci::gl::drawSolidCircle(ci::Vec2i(ar.x1+x+oX, ar.y1+y+oY), 1);
                             go = true;
                         } else {
                             go = false;
@@ -82,7 +85,6 @@ int Track::trackTag(ci::Area ar, Boolean negative){
                     }
                     if(go){
                         if(x>0 && y>0 && x<surf.getWidth() && y<surf.getHeight()){
-                            //ci::gl::drawSolidCircle(ci::Vec2i(x+oX, y+oY), 3);
                             isset.at(rad) = true;
                             int nx = int(bX+(((i/5)*4.5)*sin(ci::toRadians(float(st)))));
                             int ny = int(bY+(((i/5)*4.5)*cos(ci::toRadians(float(st)))));
@@ -109,17 +111,17 @@ int Track::trackTag(ci::Area ar, Boolean negative){
             cinder::ColorT<unsigned char> c = surf.getPixel(ci::Vec2i((int)x, (int)y));
             ci::gl::pushMatrices();
             ci::gl::translate(surf.getBounds().x1, surf.getBounds().y1);
-            ci::gl::drawSolidCircle(ci::Vec2i(x+oX, y+oY), 3);
+            ci::gl::drawSolidCircle(ci::Vec2i(ar.x1+x+oX, ar.y1+y+oY), 1);
             ci::gl::popMatrices();
             Boolean go;
             if(negative){
-                if(c.r>avg.r && c.b>avg.b && c.g>avg.g){
+                if(c.r-treshold>avg.r && c.b-treshold>avg.b && c.g-treshold>avg.g){
                     go = true;
                 } else {
                     go = false;
                 }
             } else {
-                if(c.r<avg.r && c.b<avg.b && c.g<avg.g){
+                if(c.r<avg.r-treshold && c.b<avg.b-treshold && c.g<avg.g-treshold){
                     go = true;
                 } else {
                     go = false;

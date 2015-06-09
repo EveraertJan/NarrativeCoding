@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<cards>
+	<card>
+		<id>1600</id>
+		<string>move left</string>
+		<type>move</type>
+		<x>-1</x>
+		<y>0</y>
+	</card>
+	<card>
+		<id>1120</id>
+		<string>move right</string>
+		<type>move</type>
+		<x>+1</x>
+		<y>0</y>
+	</card>
+	<card>
+		<id>1552</id>
+		<string>move up</string>
+		<type>move</type>
+		<x>0</x>
+		<y>-1</y>
+	</card>
+	<card>
+		<id>2144</id>
+		<string>move down</string>
+		<type>move</type>
+		<x>0</x>
+		<y>+1</y>
+	</card>
+</cards>

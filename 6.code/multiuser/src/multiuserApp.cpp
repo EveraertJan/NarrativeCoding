@@ -25,6 +25,7 @@ void multiuserApp::setup()
     
     setWindowSize(960, 540);
     setFullScreen(TRUE);
+    setFrameRate(24);
     setWindowPos(0, 0);
     user.setup(getWindowCenter().x, getWindowCenter().y, getWindowWidth(), getWindowHeight());
     
@@ -44,6 +45,7 @@ void multiuserApp::setup()
     mParams.addParam("state", &user.state);
     mParams.addParam("treshold greencard", &user.track.treshold);
     mParams.addParam("show cam", &user.showCam);
+    mParams.addParam("tag size", &user.tagSize);
 }
 
 void multiuserApp::mouseDown( MouseEvent event ){
