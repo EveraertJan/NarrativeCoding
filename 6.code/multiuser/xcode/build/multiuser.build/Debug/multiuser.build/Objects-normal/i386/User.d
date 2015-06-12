@@ -3,6 +3,7 @@ dependencies: \
   /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/User.h \
   /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/UI.h \
   /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/CodeMoment.h \
+  /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/Tag.h \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/include/cinder/Utilities.h \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/boost/boost/lexical_cast.hpp \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/boost/boost/detail/lcast_precision.hpp \

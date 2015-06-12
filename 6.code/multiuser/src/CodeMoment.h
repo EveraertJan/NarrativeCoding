@@ -7,12 +7,17 @@
 //
 
 #pragma once 
+#include "Tag.h"
 
 class CodeMoment{
 public:
+    void push();
     int id;
     std::string backgroundurl;
     std::string placementurl;
-    int numcards;
+    int maxCards;
     
+    
+    int curCards;
+    std::vector<Tag> tags;
 };

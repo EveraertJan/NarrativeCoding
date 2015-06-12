@@ -17,11 +17,6 @@ void Track::setup(){
     dl = Vec2i(0, ci::app::getWindowHeight());
     dr = Vec2i(ci::app::getWindowWidth(), ci::app::getWindowHeight());
     
-    //manual set of tags
-    tags.push_back(1120);
-    tags.push_back(1600);
-    tags.push_back(2144);
-    tags.push_back(1552);
     
     treshold=20;
     
@@ -143,10 +138,22 @@ int Track::trackTag(ci::Area ar, Boolean negative){
     p.y+=int(ar.getCenter().y);
     return total;
 }
+ci::Surface Track::returnSurf(ci::Area ar){
+    return c.clone(ar);
+}
 Boolean Track::trackGreen(ci::Area ar){
     ci::ColorAT<unsigned char> col;
     col = c.areaAverage(ar);
     if(col.g-col.b>treshold && col.g-col.r>treshold){
+        return true;
+    } else {
+        return false;
+    }
+}
+Boolean Track::trackRed(ci::Area ar){
+    ci::ColorAT<unsigned char> col;
+    col = c.areaAverage(ar);
+    if(col.r-col.b>treshold && col.r-col.g>treshold){
         return true;
     } else {
         return false;

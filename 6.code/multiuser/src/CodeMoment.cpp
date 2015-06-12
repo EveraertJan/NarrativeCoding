@@ -7,3 +7,11 @@
 //
 
 #include "CodeMoment.h"
+
+void CodeMoment::push(){
+    Tag t;
+    t.tag = 0;
+    t.val = 0;
+    tags.push_back(t);
+    
+}

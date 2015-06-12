@@ -23,6 +23,7 @@
 		484F92C81B26E9FE003DD378 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 484F92C61B26E9FE003DD378 /* Card.cpp */; };
 		485EE3BF1B25CAED005EE327 /* CodeMoment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 485EE3BD1B25CAED005EE327 /* CodeMoment.cpp */; };
 		487BDB461B27062E00B60CD7 /* Timing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 487BDB441B27062E00B60CD7 /* Timing.cpp */; };
+		48FC44131B2AD9550008E7A8 /* Tag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48FC44111B2AD9550008E7A8 /* Tag.cpp */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		5ABF03D2F206467BBEBD609B /* MPEClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5974C07573F94EAD87C0947F /* MPEClient.cpp */; };
@@ -65,6 +66,8 @@
 		485EE3BE1B25CAED005EE327 /* CodeMoment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeMoment.h; path = ../src/CodeMoment.h; sourceTree = "<group>"; };
 		487BDB441B27062E00B60CD7 /* Timing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Timing.cpp; path = ../src/Timing.cpp; sourceTree = "<group>"; };
 		487BDB451B27062E00B60CD7 /* Timing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Timing.h; path = ../src/Timing.h; sourceTree = "<group>"; };
+		48FC44111B2AD9550008E7A8 /* Tag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tag.cpp; path = ../src/Tag.cpp; sourceTree = "<group>"; };
+		48FC44121B2AD9550008E7A8 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tag.h; path = ../src/Tag.h; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		586A25E1CEB948699AA13A94 /* MPEApp.hpp */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; name = MPEApp.hpp; path = "../blocks/Most-Pixels-Ever/include/MPEApp.hpp"; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 				4823E9741B24657400455369 /* Cam.cpp */,
 				4823E9771B24708B00455369 /* Story.cpp */,
 				484F92C31B26E22E003DD378 /* Compiler.cpp */,
+				48FC44111B2AD9550008E7A8 /* Tag.cpp */,
 				487BDB471B2708AF00B60CD7 /* subs */,
 			);
 			name = Source;
@@ -189,6 +193,7 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				48FC44121B2AD9550008E7A8 /* Tag.h */,
 				487BDB451B27062E00B60CD7 /* Timing.h */,
 				A245E8B194D74356A0DF2E66 /* Resources.h */,
 				4823E96C1B245EC700455369 /* User.h */,
@@ -340,6 +345,7 @@
 				362C7EC740F54BFAB1795790 /* TCPAsyncClient.cpp in Sources */,
 				A6E3BD37EE754F2C88D95BFA /* TCPClient.cpp in Sources */,
 				4823E96D1B245EC700455369 /* User.cpp in Sources */,
+				48FC44131B2AD9550008E7A8 /* Tag.cpp in Sources */,
 				4823E9791B24708B00455369 /* Story.cpp in Sources */,
 				484F92C81B26E9FE003DD378 /* Card.cpp in Sources */,
 			);

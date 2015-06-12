@@ -23,11 +23,12 @@ public:
     void loadLevel(CodeMoment cm);
     std::string translate(int cardId);
     
-    void compile(std::vector<int>tags);
+    void compile(std::vector<int>tags, CodeMoment cm);
     
     Boolean checkDeath(Vec2i next);
     Boolean checkBlock(Vec2i next);
     Boolean play(int timeCode, CodeMoment cm);
+    Boolean checkSpecial(int tag);
     
     Boolean compiled;
     
@@ -39,8 +40,10 @@ public:
     Vec2i pos;
     Vec2i end;
     
+    Boolean achieved;
     
     std::vector<Card> cards;
+    std::vector<int> exists;
     
     int curPlaying;
     int frameWait;

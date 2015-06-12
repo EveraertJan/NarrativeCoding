@@ -31,7 +31,7 @@ public:
     Track track;
     Story story;
     Compiler compiler;
-    Timing t;
+    Timing timing;
     
     int userXCenter;
     int userYCenter;

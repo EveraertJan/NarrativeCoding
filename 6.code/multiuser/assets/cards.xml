@@ -28,4 +28,18 @@
 		<x>0</x>
 		<y>+1</y>
 	</card>
+	<card>
+		<id>1520</id>
+		<string>For</string>
+		<type>structure</type>
+		<x>0</x>
+		<y>0</y>
+	</card>
+	<card>
+		<id>33825</id>
+		<string>stop</string>
+		<type>end</type>
+		<x>0</x>
+		<y>0</y>
+	</card>
 </cards>

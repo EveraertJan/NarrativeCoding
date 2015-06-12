@@ -132,4 +132,5 @@ dependencies: \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/boost/boost/math/special_functions/fpclassify.hpp \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/boost/boost/math/tools/real_cast.hpp \
   ../../../../../Documents/crashlab/_cinder_0.8.6_mac/boost/boost/container/container_fwd.hpp \
-  /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/CodeMoment.h
+  /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/CodeMoment.h \
+  /Users/janeveraert/GitHub/storyblocks/6.code/multiuser/src/Tag.h
