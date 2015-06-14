@@ -8,7 +8,7 @@
 - voldoende belichtte ruimte
 - verlengkabel usb
 
-##opstelling
+##opstelling##
 1. bevestig de projector boven de tafel, men kan hiervoor gebruik maken van een spiegel, indien de projector dit ondersteund
 2. hang de webcam aan of vlakbij de projector
 3. zorg voor voldoende belichting in de ruimte
@@ -23,7 +23,7 @@ Vooraleer je met het programma kan werken, is het belangrijk dat alle kaarten di
  druk op de muis om verder te gaan met de applicatie. De settings zullen nu van het scherm verdwijnen.
  Volg de boodschappen op het scherm om verder te gaan
  
- In de linker onderhoek is een klein icoon te zien, waarmee de instellingen terug opgeroepen kunnen worden, bijvoorbeeld om het beeld verder aan te passen, of de webcam weer te geven
+ In de linker onderhoek is een klein icoon te zien, waarmee de instellingen terug opgeroepen kunnen worden, bijvoorbeeld om het beeld verder aan te passen, of de webcam weer te geven.
  
  ##belangrijke klassen##
  
@@ -31,8 +31,10 @@ Vooraleer je met het programma kan werken, is het belangrijk dat alle kaarten di
 
  Deze klasse is de eigenlijke gebruiker. Dit staat in een apparte klasse om op langere termijn meerdere users per projectie toe te laten.
  
- ####states
- States zijn een belangrijk onderdeel van de logica. Dit geeft weer op welke manier de gebruiker met het programma interactie uitvoerd. Hieronder worden deze states opgelijst
+###Track###
+ 
+ ####states####
+ States zijn een belangrijk onderdeel van de logica. Dit geeft weer op welke manier de gebruiker met het programma interactie uitvoerd. Hieronder worden deze states opgelijst;
  
 ##### -1. uitvoering van de settings
 
