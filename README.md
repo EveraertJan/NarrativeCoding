@@ -13,10 +13,10 @@
 2. hang de webcam aan of vlakbij de projector
 3. zorg voor voldoende belichting in de ruimte
 
-##voorbereiding
+##voorbereiding##
 Vooraleer je met het programma kan werken, is het belangrijk dat alle kaarten die je wenst te gebruiken uitgeprint en op maat geknipt zijn. het afknippen van de randen zorgt ervoor dat de detectie foutlozer en sneller gebeurd. Indien het mogelijk is de kaarten uit te printen op een steviger oppervlak, gaat men best voor deze oplossing, om makkelijk te plooien kaarten te voorkomen 
 
-##instellingen
+##instellingen##
  bij het opstarten van de applicatie, kunnen een aantal instellingen veranderd worden. de belangerijkste is deze van de webcam. Deze zorgen ervoor dat de webcam uitgelijnt staat met de projector. 
  
  de projector zal het beeld van de webcam in deze modus projecteren, bij een foutieve uitlijning zal een waaiereffect ontstaan. Gebruik de instellingen om het beeld zo goed mogelijk uit te lijnen. De rotatie van het beeld is hierin optioneel. Men gebruikt best de breedte-, hoogte- en positie instellingen.
