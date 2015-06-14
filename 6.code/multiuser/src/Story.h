@@ -23,4 +23,5 @@ public:
     Boolean cmExists(int codeMID);
 
     std::vector<CodeMoment> cm;
+    int currentCodeMoment;
 };

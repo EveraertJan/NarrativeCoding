@@ -12,6 +12,8 @@
 void Track::setup(){
     cam.setup();
     
+    
+    //opstellen van de 4 hoeken der camera
     ul = Vec2i(0, 0);
     ur = Vec2i(ci::app::getWindowWidth(), 0);
     dl = Vec2i(0, ci::app::getWindowHeight());
@@ -29,6 +31,8 @@ void Track::draw(Boolean showCam){
     
     if(cam.started){
         cam.draw(ul,ur, dr, dl);
+        
+        //opslaan van surface in een variabele voor verder aanspreking
         c = copyWindowSurface();
     }
     
@@ -39,7 +43,10 @@ void Track::draw(Boolean showCam){
     
 }
 int Track::trackTag(ci::Area ar, Boolean negative){
-
+    /*
+     * scannen van een area (ar) op een zichtbare tag
+     * de negative die wordt meegegeven deffinieerd of de tag zwart op wit, of omgekeerd is
+     */
     ci::Surface surf = c.clone(ar);
     int oX = surf.getBounds().getX1();
     int oY = surf.getBounds().getY1();
@@ -51,10 +58,16 @@ int Track::trackTag(ci::Area ar, Boolean negative){
         points.push_back(ci::Vec2i(bX, bY));
         isset.push_back(false);
     }
+    /*
+     *scannen van de uiterste hoeken van de effectieve tag
+     */
     ci::ColorAT<unsigned char> avg = surf.areaAverage(surf.getBounds());
     for(int i = 100; i>20; i--){
         for(int st = 0; st<360; st+=1){
             ci::gl::color(0, 250, 0);
+            /*
+             *puntberekening op een cirkel, van buiten naar binnen toe, voor elk van de vier hoeken
+             */
             int x = int(bX+(i*sin(ci::toRadians(float(st)))));
             int y = int(bY+(i*cos(ci::toRadians(float(st)))));
             int rad = floor(st/90);
@@ -91,6 +104,10 @@ int Track::trackTag(ci::Area ar, Boolean negative){
         }
     }
     
+    
+    /*
+     * eens de hoeken gekend zijn, kunnen de afzonderlijke punten uitgerekend worden, en omgezet worden in een integer waarde (zwart is nul, 1 is wit, deze worden via een binair talstelsel opgeteld)
+     */
     int steps = 5;
     int bit = 1;
     int total = 0;
@@ -142,6 +159,9 @@ ci::Surface Track::returnSurf(ci::Area ar){
     return c.clone(ar);
 }
 Boolean Track::trackGreen(ci::Area ar){
+    /*
+     * check of het oppervlak groen is
+     */
     ci::ColorAT<unsigned char> col;
     col = c.areaAverage(ar);
     if(col.g-col.b>treshold && col.g-col.r>treshold){
@@ -151,6 +171,9 @@ Boolean Track::trackGreen(ci::Area ar){
     }
 }
 Boolean Track::trackRed(ci::Area ar){
+    /*
+     * check of het oppervlak overwegend rood is
+     */
     ci::ColorAT<unsigned char> col;
     col = c.areaAverage(ar);
     if(col.r-col.b>treshold && col.r-col.g>treshold){
@@ -161,6 +184,9 @@ Boolean Track::trackRed(ci::Area ar){
 }
 
 Boolean Track::checkExistance(int tagId){
+    /*
+     * nagaan of een tag effectief bestaat (in de lijst staat
+     */
     for(int i = 0; i<tags.size(); i++){
         if(tags.at(i)==tagId){
             return true;

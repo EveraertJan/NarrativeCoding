@@ -19,7 +19,7 @@ class UI{
     void showSettings();
     void showScanner(ci::Area ar);
     void showCodeMomentScanner(ci::Area ar);
-    void showGreenScanner(ci::Area ar);
+    void showGreenScanner(ci::Area ar, std::string info);
     void showCodeMoment(CodeMoment cm, ci::Area ar, Vec2i pos);
     void showOutput(CodeMoment cm, ci::Area ar, Vec2i pos);
     void drawBlock(std::vector<Vec2i> blocks);

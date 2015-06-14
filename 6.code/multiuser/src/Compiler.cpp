@@ -132,14 +132,11 @@ void Compiler::compile(std::vector<int> tags, CodeMoment cm){
             for(int j = 0; j<cm.tags.at(i).val-1; j++){
                 for(int k = 0; k<toAdd.size(); k++){
                     process.push_back(toAdd.at(k));
-                    //console() << "init" << "\n";
                 }
             }
         }
         if(!checkSpecial(tags.at(i)) || tags.at(i)!=33825){
             process.push_back(tags.at(i));
-            //console() << "adding " << tags.at(i) << "\n";
-            //check for specials, and act likewise
         }
     }
     move.clear();
@@ -149,7 +146,6 @@ void Compiler::compile(std::vector<int> tags, CodeMoment cm){
             if(cards.at(j).cardid == process.at(i) && !found){
                 move.push_back(cards.at(j).movement);
                 found = true;
-                //console() << "to move: " << cards.at(j).movement << "\n";
             }
         }
     }
@@ -158,15 +154,14 @@ void Compiler::compile(std::vector<int> tags, CodeMoment cm){
     go.push_back(start);
     for(int i = 0; i<move.size(); i++){
         Vec2i to = Vec2i(pos.x+move.at(i).x, pos.y+move.at(i).y);
-        //console() << "going to " << to << "\n";
         if(!checkDeath(to)){
             if(!checkBlock(to)){
-                //console() << "no blocks\n";
                 go.push_back(to);
                 pos=to;
             }
         } else {
-            //diededed
+            //de speler is gestorven, begin opnieuw
+            return;
         }
     }
     compiled = true;
@@ -196,24 +191,6 @@ Boolean Compiler::play(int timeCode, CodeMoment cm){
     } catch( ... ) {
         return false;
     }
-    /*
-    
-    int tagSize = 40;
-    int imgSize = 600/2;
-    std::vector<Area>sa;
-    for(int i =0; i< cm.numcards+1; i++){
-        Vec2i p = Vec2i((getWindowWidth()/2-imgSize+(tagSize/2))+(i*(tagSize+20)), getWindowHeight()/2+imgSize);
-        Area a = Area(p.x-tagSize/2, p.y-tagSize/2, p.x+tagSize/2, p.y+tagSize/2);
-        if(i<cm.numcards+1){
-            gl::drawStrokedRect(Rectf(a));
-        } else {
-            gl::color(0, 255, 0);
-            gl::drawStrokedRect(Rectf(a));
-        }
-        sa.push_back(a);
-    }
-    
-    */
     
 }
 

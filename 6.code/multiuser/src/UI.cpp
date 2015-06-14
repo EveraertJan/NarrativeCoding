@@ -4,6 +4,7 @@
 //
 //  Created by jan everaert on 07/06/15.
 //
+// deze class dient enkel en alleen voor het uitprojecteren van scanvelden en andere info
 //
 
 #include "UI.h"
@@ -34,10 +35,11 @@ void UI::showCodeMomentScanner(ci::Area ar){
     settingsVis = false;
 }
 
-void UI::showGreenScanner(ci::Area ar){
+void UI::showGreenScanner(ci::Area ar, std::string info){
     gl::color(255, 255, 255);
     ci::gl::drawStrokedRect(ci::Rectf(ar));
-    ci::gl::drawStringCentered("scan green card", ci::Vec2i(ci::app::getWindowCenter().x, 100));
+    //ci::gl::drawStringCentered("scan green card", ci::Vec2i(ci::app::getWindowCenter().x, 100));
+    ci::gl::drawStringCentered(info, ci::Vec2i(ci::app::getWindowCenter().x, 100));
     settingsVis = false;
 }
 void UI::showCodeMoment(CodeMoment cm, ci::Area ar, Vec2i pos){

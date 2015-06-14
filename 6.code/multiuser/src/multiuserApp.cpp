@@ -33,22 +33,30 @@ void multiuserApp::setup()
     
     mParams = params::InterfaceGl( "tracking", Vec2i( 200, 300 ) );
     //mParams.addParam( "tag threshold", &user.track.tagThreshold, "min=0.0 max=255.0 step=2.0");
-    
-    mParams.addParam("xrot", &user.track.cam.xrot);
-    mParams.addParam("yrot", &user.track.cam.yrot);
-    mParams.addParam("zrot", &user.track.cam.zrot);
+    /*
+     *
+     */
+    mParams.addText("de volgende code dient om het beeld uit te lijnen met de projectie, zorg ervoor dat er geen beeld naast het werkelijke object geprojecteerd word. denk eraan: soms is het gemakkelijker de webcam anders te richten");
+    mParams.addParam("rotatie x", &user.track.cam.xrot);
+    mParams.addParam("rotatie y", &user.track.cam.yrot);
+    mParams.addParam("rotatie z", &user.track.cam.zrot);
     mParams.addParam("width", &user.track.cam.width);
     mParams.addParam("height", &user.track.cam.height);
-    mParams.addParam("x", &user.track.cam.x);
-    mParams.addParam("y", &user.track.cam.y);
+    mParams.addParam("xpos van het beeld", &user.track.cam.x);
+    mParams.addParam("ypos van het beeld", &user.track.cam.y);
+    /*
+     * development settings
+     *
     mParams.addSeparator();
     mParams.addParam("state", &user.state);
     mParams.addParam("treshold greencard", &user.track.treshold);
     mParams.addParam("show cam", &user.showCam);
     mParams.addParam("tag size", &user.tagSize);
+     */
 }
 
 void multiuserApp::mouseDown( MouseEvent event ){
+    //safeguard om verder te gaan
     user.state++;
 }
 
@@ -61,12 +69,12 @@ void multiuserApp::draw(){
 	gl::clear( Color( 0, 0, 0 ) );
     user.draw();
     
-    //if(user.ui.settingsVis){
+    if(user.ui.settingsVis){
         mParams.setPosition(Vec2i(0, 0));
         mParams.draw();
-    //} else {
-    //    mParams.hide();
-    //}
+    } else {
+        mParams.hide();
+    }
 }
 
 CINDER_APP_NATIVE( multiuserApp, RendererGl )

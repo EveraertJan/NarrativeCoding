@@ -18,7 +18,6 @@
 		4823E9731B2461C100455369 /* Track.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4823E9711B2461C100455369 /* Track.cpp */; };
 		4823E9761B24657400455369 /* Cam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4823E9741B24657400455369 /* Cam.cpp */; };
 		4823E9791B24708B00455369 /* Story.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4823E9771B24708B00455369 /* Story.cpp */; };
-		484F92C21B265BBC003DD378 /* Conciousness.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 484F92C01B265BBC003DD378 /* Conciousness.cpp */; };
 		484F92C51B26E22F003DD378 /* Compiler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 484F92C31B26E22E003DD378 /* Compiler.cpp */; };
 		484F92C81B26E9FE003DD378 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 484F92C61B26E9FE003DD378 /* Card.cpp */; };
 		485EE3BF1B25CAED005EE327 /* CodeMoment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 485EE3BD1B25CAED005EE327 /* CodeMoment.cpp */; };
@@ -56,8 +55,6 @@
 		4823E9751B24657400455369 /* Cam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cam.h; path = ../src/Cam.h; sourceTree = "<group>"; };
 		4823E9771B24708B00455369 /* Story.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Story.cpp; path = ../src/Story.cpp; sourceTree = "<group>"; };
 		4823E9781B24708B00455369 /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Story.h; path = ../src/Story.h; sourceTree = "<group>"; };
-		484F92C01B265BBC003DD378 /* Conciousness.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Conciousness.cpp; path = ../src/Conciousness.cpp; sourceTree = "<group>"; };
-		484F92C11B265BBC003DD378 /* Conciousness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Conciousness.h; path = ../src/Conciousness.h; sourceTree = "<group>"; };
 		484F92C31B26E22E003DD378 /* Compiler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Compiler.cpp; path = ../src/Compiler.cpp; sourceTree = "<group>"; };
 		484F92C41B26E22E003DD378 /* Compiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Compiler.h; path = ../src/Compiler.h; sourceTree = "<group>"; };
 		484F92C61B26E9FE003DD378 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Card.cpp; path = ../src/Card.cpp; sourceTree = "<group>"; };
@@ -131,7 +128,6 @@
 				4823E9741B24657400455369 /* Cam.cpp */,
 				4823E9771B24708B00455369 /* Story.cpp */,
 				484F92C31B26E22E003DD378 /* Compiler.cpp */,
-				48FC44111B2AD9550008E7A8 /* Tag.cpp */,
 				487BDB471B2708AF00B60CD7 /* subs */,
 			);
 			name = Source;
@@ -205,7 +201,6 @@
 				485EE3BE1B25CAED005EE327 /* CodeMoment.h */,
 				4823E9721B2461C100455369 /* Track.h */,
 				484F92C71B26E9FE003DD378 /* Card.h */,
-				484F92C11B265BBC003DD378 /* Conciousness.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -244,8 +239,8 @@
 		487BDB471B2708AF00B60CD7 /* subs */ = {
 			isa = PBXGroup;
 			children = (
+				48FC44111B2AD9550008E7A8 /* Tag.cpp */,
 				485EE3BD1B25CAED005EE327 /* CodeMoment.cpp */,
-				484F92C01B265BBC003DD378 /* Conciousness.cpp */,
 				484F92C61B26E9FE003DD378 /* Card.cpp */,
 				487BDB441B27062E00B60CD7 /* Timing.cpp */,
 			);
@@ -341,7 +336,6 @@
 				487BDB461B27062E00B60CD7 /* Timing.cpp in Sources */,
 				4823E9701B245FD900455369 /* UI.cpp in Sources */,
 				5ABF03D2F206467BBEBD609B /* MPEClient.cpp in Sources */,
-				484F92C21B265BBC003DD378 /* Conciousness.cpp in Sources */,
 				362C7EC740F54BFAB1795790 /* TCPAsyncClient.cpp in Sources */,
 				A6E3BD37EE754F2C88D95BFA /* TCPClient.cpp in Sources */,
 				4823E96D1B245EC700455369 /* User.cpp in Sources */,
