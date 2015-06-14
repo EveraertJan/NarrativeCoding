@@ -25,35 +25,37 @@ Vooraleer je met het programma kan werken, is het belangrijk dat alle kaarten di
  
  In de linker onderhoek is een klein icoon te zien, waarmee de instellingen terug opgeroepen kunnen worden, bijvoorbeeld om het beeld verder aan te passen, of de webcam weer te geven.
  
- ##belangrijke klassen##
+##belangrijke klassen##
  
- ###User###
+###User###
 
- Deze klasse is de eigenlijke gebruiker. Dit staat in een apparte klasse om op langere termijn meerdere users per projectie toe te laten.
+Deze klasse is de eigenlijke gebruiker. Dit staat in een apparte klasse om op langere termijn meerdere users per projectie toe te laten.
+
+###Track
  
-###Track###
+
  
- ####states####
+##states##
  States zijn een belangrijk onderdeel van de logica. Dit geeft weer op welke manier de gebruiker met het programma interactie uitvoerd. Hieronder worden deze states opgelijst;
  
-##### -1. uitvoering van de settings
+### -1. uitvoering van de settings###
 
  Hier kan de gebruiker instellingen aanpassen, zoals het uitlijnen van de camera, of grootte van de te scannen tags
  
- ##### 0. Scan het boek
+### 0. Scan het boek
  
  In deze staat kiest de gebruiker het boek dat hij wil gebruiken. Bij het scannen van het boek wordt eerst nagegaan of dit bestaat, en indien dit het geval is word het corresponderende boek ingeladen, zodat alle codemomenten reeds opgeslagen zijn in het programma. 
  Bij het scannen van een correcte code gaat het programma automatisch naar de volgende state.
  
- ##### 1. Scan het codemoment
+### 1. Scan het codemoment
  
  De gebruiker is momenteel het boek aan het lezen. Indien deze op een codemoment stoot (aangegeven door een tag in het boek), kan hij dit scannen. Het programma detecteerd dit, en controlleerd of het gescannede codemoment effectief bestaat. De controle geeft hierna aan dat het programma naar een volgende state mag gaan
  
- ##### 2. Tutorial
+### 2. Tutorial
  
  Soms is het nodig de gebruiker wat extra info aan te reiken. In deze stap is dit mogelijk. Na het doornemen van deze info kan de groene kaart gebruikt worden om door te gaan naar de volgende stap.
  
- ##### 3. Het codemoment
+### 3. Het codemoment
  
  
  
