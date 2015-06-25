@@ -55,7 +55,6 @@ Deze klasse is de eigenlijke gebruiker. Dit staat in een apparte klasse om op la
  
  Soms is het nodig de gebruiker wat extra info aan te reiken. In deze stap is dit mogelijk. Na het doornemen van deze info kan de groene kaart gebruikt worden om door te gaan naar de volgende stap.
  
-### 3. Het codemoment
  
  
  
